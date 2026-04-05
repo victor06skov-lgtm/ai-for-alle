@@ -73,6 +73,7 @@
           <a href="#myter" class="nav-link px-3 py-2 text-sm font-medium text-gray-600 hover:text-brand-700 rounded-lg transition-colors">Myter</a>
           <a href="#proev" class="nav-link px-3 py-2 text-sm font-medium text-gray-600 hover:text-brand-700 rounded-lg transition-colors">Prøv det</a>
           <a href="#sikkerhed" class="nav-link px-3 py-2 text-sm font-medium text-gray-600 hover:text-brand-700 rounded-lg transition-colors">Sikkerhed</a>
+          <a href="#spoerg" class="nav-link px-3 py-2 text-sm font-medium text-gray-600 hover:text-brand-700 rounded-lg transition-colors">Spørg</a>
           <a href="#ordliste" class="nav-link px-3 py-2 text-sm font-medium text-gray-600 hover:text-brand-700 rounded-lg transition-colors">Ordliste</a>
         </div>
         <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg hover:bg-gray-100 cursor-pointer" aria-label="Åbn menu" aria-expanded="false" aria-controls="mobile-menu">
@@ -90,6 +91,7 @@
         <a href="#myter" class="block px-3 py-2 text-sm font-medium text-gray-600 rounded-lg hover:bg-gray-50">Myter vs. Fakta</a>
         <a href="#proev" class="block px-3 py-2 text-sm font-medium text-gray-600 rounded-lg hover:bg-gray-50">Prøv det selv</a>
         <a href="#sikkerhed" class="block px-3 py-2 text-sm font-medium text-gray-600 rounded-lg hover:bg-gray-50">Sikkerhed</a>
+        <a href="#spoerg" class="block px-3 py-2 text-sm font-medium text-gray-600 rounded-lg hover:bg-gray-50">Spørg om AI</a>
         <a href="#ordliste" class="block px-3 py-2 text-sm font-medium text-gray-600 rounded-lg hover:bg-gray-50">Ordliste</a>
       </div>
     </div>
@@ -161,6 +163,12 @@
                 <svg class="w-4 h-4 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
               </span>
               Sikkerhed & Privatliv
+            </a>
+            <a href="#spoerg" class="hero-drop-link flex items-center gap-3 px-4 py-3 text-sm text-gray-700 hover:bg-cyan-50 hover:text-cyan-700 transition-colors">
+              <span class="w-8 h-8 bg-cyan-100 rounded-lg flex items-center justify-center shrink-0">
+                <svg class="w-4 h-4 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"/></svg>
+              </span>
+              Spørg om AI
             </a>
             <a href="#ordliste" class="hero-drop-link flex items-center gap-3 px-4 py-3 text-sm text-gray-700 hover:bg-rose-50 hover:text-rose-700 transition-colors">
               <span class="w-8 h-8 bg-rose-100 rounded-lg flex items-center justify-center shrink-0">
@@ -1051,6 +1059,67 @@
     </div>
   </section>
 
+  <!-- Spørg AI'en -->
+  <section id="spoerg" class="py-20 px-4 sm:px-6 bg-gradient-to-br from-brand-50 via-white to-purple-50">
+    <div class="max-w-3xl mx-auto">
+      <div class="text-center mb-10 fade-in">
+        <span class="text-brand-600 font-semibold text-sm uppercase tracking-wider">Interaktiv</span>
+        <h2 class="text-3xl sm:text-4xl font-800 text-gray-900 mt-2 mb-4">Spørg om AI</h2>
+        <p class="text-gray-500 max-w-2xl mx-auto">Har du et spørgsmål om kunstig intelligens? Skriv det herunder og få svar med det samme. Prøv f.eks. "hvad er ChatGPT?" eller "kan AI tænke?"</p>
+      </div>
+
+      <div class="fade-in bg-white rounded-2xl border border-gray-200 shadow-lg overflow-hidden">
+        <!-- Chat header -->
+        <div class="flex items-center gap-3 px-5 py-3.5 bg-gradient-to-r from-brand-600 to-brand-700 text-white">
+          <div class="w-9 h-9 bg-white/20 rounded-full flex items-center justify-center">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+          </div>
+          <div>
+            <p class="font-semibold text-sm">AI Guide Assistent</p>
+            <p class="text-xs text-white/70">Online — svarer med det samme</p>
+          </div>
+          <div class="ml-auto flex items-center gap-1.5">
+            <span class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
+            <span class="text-xs text-white/70">Klar</span>
+          </div>
+        </div>
+
+        <!-- Chat messages -->
+        <div id="chat-messages" class="h-80 overflow-y-auto px-5 py-4 space-y-4 scroll-smooth" style="scrollbar-width: thin;">
+          <!-- Bot welcome -->
+          <div class="flex items-start gap-3">
+            <div class="w-8 h-8 bg-brand-100 rounded-full flex items-center justify-center shrink-0 mt-0.5">
+              <svg class="w-4 h-4 text-brand-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+            </div>
+            <div class="bg-gray-100 rounded-2xl rounded-tl-md px-4 py-3 max-w-[85%]">
+              <p class="text-sm text-gray-700">Hej! 👋 Jeg er din AI-guide. Still mig et spørgsmål om kunstig intelligens, og jeg giver dig et klart svar. Du kan også klikke på forslagene herunder.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Suggested questions -->
+        <div id="chat-suggestions" class="px-5 pb-3 flex flex-wrap gap-2">
+          <button onclick="askSuggested(this)" class="suggest-btn text-xs px-3 py-1.5 bg-brand-50 text-brand-700 border border-brand-200 rounded-full hover:bg-brand-100 transition-colors cursor-pointer">Hvad er AI?</button>
+          <button onclick="askSuggested(this)" class="suggest-btn text-xs px-3 py-1.5 bg-brand-50 text-brand-700 border border-brand-200 rounded-full hover:bg-brand-100 transition-colors cursor-pointer">Kan AI tænke?</button>
+          <button onclick="askSuggested(this)" class="suggest-btn text-xs px-3 py-1.5 bg-brand-50 text-brand-700 border border-brand-200 rounded-full hover:bg-brand-100 transition-colors cursor-pointer">Hvad er ChatGPT?</button>
+          <button onclick="askSuggested(this)" class="suggest-btn text-xs px-3 py-1.5 bg-brand-50 text-brand-700 border border-brand-200 rounded-full hover:bg-brand-100 transition-colors cursor-pointer">Er AI farligt?</button>
+          <button onclick="askSuggested(this)" class="suggest-btn text-xs px-3 py-1.5 bg-brand-50 text-brand-700 border border-brand-200 rounded-full hover:bg-brand-100 transition-colors cursor-pointer">Hvad er en LLM?</button>
+          <button onclick="askSuggested(this)" class="suggest-btn text-xs px-3 py-1.5 bg-brand-50 text-brand-700 border border-brand-200 rounded-full hover:bg-brand-100 transition-colors cursor-pointer">Tager AI mit job?</button>
+        </div>
+
+        <!-- Input area -->
+        <div class="border-t border-gray-100 px-4 py-3 flex items-center gap-2 bg-gray-50/50">
+          <input id="chat-input" type="text" placeholder="Skriv dit spørgsmål om AI..." class="flex-1 bg-white border border-gray-200 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent" onkeydown="if(event.key==='Enter')sendChat()" />
+          <button onclick="sendChat()" class="w-10 h-10 bg-brand-600 text-white rounded-xl flex items-center justify-center hover:bg-brand-700 transition-colors cursor-pointer shrink-0">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <p class="text-center text-xs text-gray-400 mt-4">Denne chatbot bruger forudskrevne svar — den er ikke en rigtig AI, men en demonstration af hvordan en Q&A-bot fungerer.</p>
+    </div>
+  </section>
+
   <!-- Ordliste -->
   <section id="ordliste" class="py-20 px-4 sm:px-6 bg-gray-50">
     <div class="max-w-4xl mx-auto">
@@ -1198,6 +1267,7 @@
         <a href="#myter" class="hover:text-white transition-colors">Myter</a>
         <a href="#proev" class="hover:text-white transition-colors">Prøv det</a>
         <a href="#sikkerhed" class="hover:text-white transition-colors">Sikkerhed</a>
+        <a href="#spoerg" class="hover:text-white transition-colors">Spørg</a>
         <a href="#ordliste" class="hover:text-white transition-colors">Ordliste</a>
       </div>
       <div class="mt-8 pt-8 border-t border-gray-800 text-xs text-gray-500">
@@ -1381,6 +1451,199 @@
 
     // Initialize first round
     renderRound();
+
+    // ===== CHAT Q&A BOT =====
+    const qaDatabase = [
+      {
+        keywords: ["hvad er ai", "kunstig intelligens", "hvad betyder ai", "hvad er kunstig"],
+        answer: "AI (kunstig intelligens) er software der kan lære af eksempler i stedet for at følge faste regler. I stedet for at et menneske skriver \"hvis X, gør Y\", viser man AI'en tusindvis af eksempler, og den finder selv mønstrene. Det er lidt som forskellen på at give nogen en kogebog vs. at lade dem smage hundredvis af retter og lære selv."
+      },
+      {
+        keywords: ["chatgpt", "chat gpt", "gpt"],
+        answer: "ChatGPT er en AI-chatbot lavet af firmaet OpenAI. Den bruger en sprogmodel (GPT) til at forstå og skrive tekst. Du kan bruge den til at stille spørgsmål, få hjælp til at skrive, oversætte, kode og meget mere. Den er gratis at prøve på chat.openai.com — men den betalte version (Plus) giver adgang til nyere og klogere modeller."
+      },
+      {
+        keywords: ["claude", "anthropic"],
+        answer: "Claude er en AI-assistent lavet af Anthropic. Den er kendt for at være god til lange tekster, nuancerede svar og kodning. Mange mener den er særligt god til at følge komplekse instruktioner. Du kan prøve den gratis på claude.ai."
+      },
+      {
+        keywords: ["gemini", "google ai", "bard"],
+        answer: "Gemini er Googles AI-model (tidligere kaldet Bard). Den er integreret i Google-produkter og kan søge på nettet i realtid. Fordelen er at den har adgang til frisk information og fungerer godt sammen med Gmail, Docs og andre Google-tjenester. Prøv den på gemini.google.com."
+      },
+      {
+        keywords: ["kan ai tænke", "tænker ai", "bevidst", "føler ai", "bevidsthed"],
+        answer: "Nej, AI kan ikke tænke eller føle noget. Den har ingen bevidsthed, følelser eller forståelse. Det den gør, er at genkende mønstre i data og forudsige det mest sandsynlige output. Når ChatGPT skriver et svar, \"gætter\" den ord for ord hvad der sandsynligvis bør komme som det næste — lidt som en ekstremt avanceret autokorrektur."
+      },
+      {
+        keywords: ["farlig", "risiko", "overtage", "tage over", "terminat", "dommedag", "skynet"],
+        answer: "AI i dag er et værktøj — den har ingen intentioner eller ønsker. De reelle risici handler mere om: misinformation (AI kan lyde overbevisende men tage fejl), bias (AI kan afspejle fordomme i dens træningsdata), privatliv (data du deler kan bruges til træning), og jobpåvirkning. Men AI \"vil\" ikke overtage verden — den er software, ikke en bevidst entitet."
+      },
+      {
+        keywords: ["job", "arbejde", "erstat", "fyret", "arbejdsløs", "automatiser"],
+        answer: "AI vil ændre mange jobs, men sjældent erstatte hele stillinger. Det mest realistiske scenarie er at AI overtager specifikke opgaver inden for et job, mens mennesker fokuserer på kreativitet, empati og kompleks problemløsning. De bedst stillede er dem der lærer at bruge AI som et værktøj. Tænk på det som: \"AI erstatter ikke mennesker — mennesker der bruger AI erstatter mennesker der ikke gør.\""
+      },
+      {
+        keywords: ["llm", "sprogmodel", "large language", "stor sprogmodel"],
+        answer: "LLM står for Large Language Model (stor sprogmodel). Det er AI-modeller der er trænet på enorme mængder tekst fra internettet. De lærer statistiske sammenhænge mellem ord — f.eks. at \"Hovedstaden i Danmark er...\" sandsynligvis efterfølges af \"København\". Eksempler er GPT-4, Claude og Gemini. De er grundlaget for chatbots som ChatGPT."
+      },
+      {
+        keywords: ["hallucin", "lyver", "forkert", "fejl", "opdigter", "fakta"],
+        answer: "AI kan \"hallucinere\" — det vil sige opdigte ting der lyder troværdige men er forkerte. Det sker fordi AI ikke \"ved\" noget; den forudsiger sandsynlige ord-sekvenser. Derfor bør du altid faktatjekke vigtig information fra AI. Tip: Bed AI'en om at angive kilder, og verificér dem selv."
+      },
+      {
+        keywords: ["prompt", "prompte", "spørge", "hvordan spørger", "bedre svar", "prompt engineering"],
+        answer: "Et \"prompt\" er den tekst du giver til AI'en. Jo bedre dit prompt, jo bedre svar. Gode tips: 1) Vær specifik (\"skriv en formel email om...\" i stedet for \"skriv en email\"), 2) Giv kontekst (\"jeg er studerende og skal...\"), 3) Angiv format (\"svar i punktform\"), 4) Giv eksempler på hvad du vil have. Det kaldes \"prompt engineering\" og er en vigtig færdighed."
+      },
+      {
+        keywords: ["billede", "billed", "dall-e", "midjourney", "stable diffusion", "generere billede", "ai kunst", "flux"],
+        answer: "AI-billedgenerering bruger modeller som DALL-E, Midjourney og Flux til at skabe billeder ud fra tekst. Du skriver f.eks. \"en kat på en regnbue\" og AI'en laver billedet. Teknisk starter den med tilfældigt \"støj\" og fjerner det gradvist, styret af din beskrivelse. Det bruges til kunst, design, markedsføring og meget mere."
+      },
+      {
+        keywords: ["gratis", "pris", "koster", "betale", "penge", "abonnement"],
+        answer: "Mange AI-værktøjer har en gratis version! ChatGPT, Claude, Gemini og Perplexity kan alle bruges gratis med visse begrænsninger. De betalte versioner (typisk 150-200 kr/md) giver adgang til klogere modeller, hurtigere svar og flere funktioner. For de fleste er den gratis version fin til at starte med."
+      },
+      {
+        keywords: ["sikker", "privat", "data", "privatliv", "personlig", "deler"],
+        answer: "Vigtige sikkerhedstips med AI: 1) Del aldrig passwords, CPR-nr eller bankinfo, 2) Antag at alt du skriver kan blive brugt til træning, 3) Brug ikke AI til fortrolige arbejdsdokumenter uden tilladelse, 4) Tjek AI's svar for fejl — stol ikke blindt på det. De fleste AI-tjenester gemmer dine samtaler, men du kan ofte slå det fra i indstillingerne."
+      },
+      {
+        keywords: ["agent", "agenter", "workflow", "autonom", "selv gør"],
+        answer: "AI-agenter er AI-systemer der kan udføre flere trin selv — f.eks. undersøge et emne, sammenligne priser og skrive en rapport. I stedet for at du giver én instruktion ad gangen, giver du agenten et mål, og den finder selv ud af trinnene. Det er næste generation af AI og bruges allerede til kundeservice, kodning og research."
+      },
+      {
+        keywords: ["token", "tokens"],
+        answer: "Tokens er de \"brikker\" AI'en opdeler tekst i. Et token er typisk ¾ af et ord. Når folk siger en model har \"128K kontekst\", betyder det den kan huske ~128.000 tokens (~96.000 ord) ad gangen. Tokens er også det du betaler for ved API-brug — jo flere tokens, jo dyrere."
+      },
+      {
+        keywords: ["træn", "train", "machine learning", "maskinlæring", "lærer"],
+        answer: "AI trænes ved at se enorme mængder data. En sprogmodel læser f.eks. milliarder af sider fra internettet og lærer mønstre i sproget. Processen kræver tusindvis af kraftige computere (GPU'er) og kan koste millioner af kroner. Når modellen er færdigtrænet, kan den bruges til at generere ny tekst baseret på hvad den har lært."
+      },
+      {
+        keywords: ["perplexity", "søgemaskine ai", "ai søg"],
+        answer: "Perplexity er en AI-søgemaskine der kombinerer AI med internet-søgning. I stedet for at give dig en liste af links, læser den kilderne og giver dig et samlet svar med referencer. Det er perfekt når du vil have et hurtigt, kildebaseret svar. Gratis at bruge på perplexity.ai."
+      },
+      {
+        keywords: ["suno", "musik", "sang", "lyd", "audio"],
+        answer: "Suno er en AI der kan lave musik! Du beskriver en sang i tekst (f.eks. \"glad popsang om sommeren på dansk\") og Suno genererer en komplet sang med vokal, instrumenter og det hele. Det er gratis at prøve på suno.com — og resultatet er overraskende godt."
+      },
+      {
+        keywords: ["open source", "åben kilde", "llama", "lokal", "selv køre"],
+        answer: "Open source AI-modeller (som Metas Llama) er frit tilgængelige — du kan downloade og køre dem på din egen computer. Fordelen er fuld kontrol over data og ingen abonnement. Ulempen er at de kræver en kraftig computer, og de er typisk ikke helt så gode som de lukkede modeller (GPT-4, Claude)."
+      },
+      {
+        keywords: ["kode", "programmere", "programmering", "kodning", "udvikl"],
+        answer: "AI er fantastisk til kodning! Modeller som Claude, GPT-4 og Gemini kan skrive kode, finde fejl, forklare kode og hjælpe med debugging. Du behøver ikke være programmør — du kan bede AI'en om at lave simple scripts, hjemmesider eller automatiseringer bare ved at beskrive hvad du vil have. Det er en af de mest populære use cases for AI."
+      },
+      {
+        keywords: ["start", "begynde", "ny", "første gang", "begynder", "tips", "råd"],
+        answer: "Godt sted at starte: 1) Opret en gratis konto på ChatGPT (chat.openai.com) eller Claude (claude.ai), 2) Start med simple spørgsmål du kender svaret på, 3) Eksperimentér med at bede den skrive, oversætte eller forklare ting, 4) Læs resten af denne guide for at forstå de forskellige typer AI, 5) Husk: der er ingen dumme spørgsmål — jo mere du bruger AI, jo bedre bliver du til det!"
+      },
+      {
+        keywords: ["dansk", "danmark", "sprog"],
+        answer: "De store AI-modeller (ChatGPT, Claude, Gemini) forstår og skriver dansk rigtig godt! De er trænet på tekst fra mange sprog, inklusiv dansk. Du kan sagtens bruge dem på dansk til daglig. Tip: Hvis du får et svar på engelsk, skriv bare \"svar på dansk\" — så skifter AI'en."
+      },
+      {
+        keywords: ["fremtid", "om 5 år", "om 10 år", "hvad sker", "udvikling"],
+        answer: "AI udvikler sig ekstremt hurtigt. Tendenser vi ser: 1) Modellerne bliver klogere og billigere, 2) AI-agenter der kan udføre komplekse opgaver selvstændigt, 3) AI integreret i alle apps og tjenester, 4) Bedre billedgenerering, video og musik, 5) Mere fokus på sikkerhed og regulering. Den bedste strategi er at lære AI-grundlaget nu, så du er klar."
+      }
+    ];
+
+    function findAnswer(question) {
+      const q = question.toLowerCase().trim();
+      let bestMatch = null;
+      let bestScore = 0;
+
+      for (const qa of qaDatabase) {
+        for (const kw of qa.keywords) {
+          if (q.includes(kw)) {
+            const kwScore = kw.length;
+            if (kwScore > bestScore) {
+              bestScore = kwScore;
+              bestMatch = qa;
+            }
+          }
+        }
+      }
+
+      if (bestMatch) return bestMatch.answer;
+
+      // Fuzzy: check if any individual keyword words match
+      const qWords = q.split(/\s+/).filter(w => w.length > 2);
+      for (const qa of qaDatabase) {
+        for (const kw of qa.keywords) {
+          const kwWords = kw.split(/\s+/);
+          for (const kwWord of kwWords) {
+            if (kwWord.length > 3 && qWords.some(w => w.includes(kwWord) || kwWord.includes(w))) {
+              return qa.answer;
+            }
+          }
+        }
+      }
+
+      return "Godt spørgsmål! Det har jeg desværre ikke et svar på endnu. Prøv at spørge om noget specifikt som f.eks. \"hvad er ChatGPT?\", \"kan AI tænke?\", \"er AI farligt?\" eller \"hvad er en LLM?\". Du kan også klikke på forslagene herunder.";
+    }
+
+    function addMessage(text, isUser) {
+      const container = document.getElementById('chat-messages');
+      const wrapper = document.createElement('div');
+      wrapper.className = isUser ? 'flex items-start gap-3 justify-end' : 'flex items-start gap-3';
+
+      if (isUser) {
+        wrapper.innerHTML = '<div class="bg-brand-600 text-white rounded-2xl rounded-tr-md px-4 py-3 max-w-[85%]"><p class="text-sm">' + escapeHtml(text) + '</p></div>';
+      } else {
+        wrapper.innerHTML = '<div class="w-8 h-8 bg-brand-100 rounded-full flex items-center justify-center shrink-0 mt-0.5"><svg class="w-4 h-4 text-brand-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg></div><div class="bg-gray-100 rounded-2xl rounded-tl-md px-4 py-3 max-w-[85%]"><p class="text-sm text-gray-700">' + text + '</p></div>';
+      }
+
+      container.appendChild(wrapper);
+      container.scrollTop = container.scrollHeight;
+    }
+
+    function addTypingIndicator() {
+      const container = document.getElementById('chat-messages');
+      const wrapper = document.createElement('div');
+      wrapper.className = 'flex items-start gap-3';
+      wrapper.id = 'typing-indicator';
+      wrapper.innerHTML = '<div class="w-8 h-8 bg-brand-100 rounded-full flex items-center justify-center shrink-0 mt-0.5"><svg class="w-4 h-4 text-brand-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg></div><div class="bg-gray-100 rounded-2xl rounded-tl-md px-4 py-3"><div class="flex gap-1"><span class="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style="animation-delay:0ms"></span><span class="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style="animation-delay:150ms"></span><span class="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style="animation-delay:300ms"></span></div></div>';
+      container.appendChild(wrapper);
+      container.scrollTop = container.scrollHeight;
+    }
+
+    function removeTypingIndicator() {
+      const el = document.getElementById('typing-indicator');
+      if (el) el.remove();
+    }
+
+    function escapeHtml(text) {
+      const div = document.createElement('div');
+      div.textContent = text;
+      return div.innerHTML;
+    }
+
+    function sendChat() {
+      const input = document.getElementById('chat-input');
+      const text = input.value.trim();
+      if (!text) return;
+
+      addMessage(text, true);
+      input.value = '';
+
+      // Show typing indicator
+      addTypingIndicator();
+
+      // Simulate typing delay
+      const delay = 400 + Math.random() * 800;
+      setTimeout(() => {
+        removeTypingIndicator();
+        const answer = findAnswer(text);
+        addMessage(answer, false);
+      }, delay);
+    }
+
+    function askSuggested(btn) {
+      const text = btn.textContent;
+      document.getElementById('chat-input').value = text;
+      sendChat();
+    }
   </script>
 </body>
 </html>
