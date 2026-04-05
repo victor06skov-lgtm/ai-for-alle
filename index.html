@@ -7,38 +7,26 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Crimson+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lucide-static@latest/font/lucide.min.css" />
   <script>
     tailwind.config = {
       theme: {
         extend: {
-          fontFamily: {
-            sans: ['Atkinson Hyperlegible', 'system-ui', 'sans-serif'],
-            heading: ['Crimson Pro', 'Georgia', 'serif'],
-          },
+          fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
           colors: {
             brand: {
-              50: '#eef2ff',
-              100: '#e0e7ff',
-              200: '#c7d2fe',
-              300: '#a5b4fc',
-              400: '#818cf8',
-              500: '#6366f1',
-              600: '#4f46e5',
-              700: '#4338ca',
-              800: '#3730a3',
-              900: '#1e1b4b',
-            },
-            accent: {
-              500: '#ea580c',
-              600: '#dc4e09',
-              700: '#c2410c',
+              50: '#eff6ff',
+              100: '#dbeafe',
+              200: '#bfdbfe',
+              300: '#93c5fd',
+              400: '#60a5fa',
+              500: '#3b82f6',
+              600: '#2563eb',
+              700: '#1d4ed8',
+              800: '#1e40af',
+              900: '#1e3a8a',
             }
-          },
-          borderRadius: {
-            'clay': '20px',
-            'clay-lg': '24px',
           }
         }
       }
@@ -46,55 +34,33 @@
   </script>
   <style>
     .gradient-text {
-      background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 50%, #ea580c 100%);
+      background: linear-gradient(135deg, #2563eb 0%, #7c3aed 50%, #ec4899 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
     }
-    /* Claymorphism card style */
-    .card-clay {
-      background: #ffffff;
-      border: 3px solid #e0e7ff;
-      border-radius: 20px;
-      box-shadow: 6px 6px 16px rgba(79, 70, 229, 0.08), inset -2px -2px 6px rgba(79, 70, 229, 0.04);
-      transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
-    }
-    .card-clay:hover {
-      transform: translateY(-4px);
-      box-shadow: 8px 8px 24px rgba(79, 70, 229, 0.12), inset -2px -2px 6px rgba(79, 70, 229, 0.06);
-    }
-    .card-hover { transition: transform 0.2s ease-out, box-shadow 0.2s ease-out; }
-    .card-hover:hover { transform: translateY(-4px); box-shadow: 8px 8px 24px rgba(79, 70, 229, 0.12); }
+    .card-hover { transition: transform 0.2s ease, box-shadow 0.2s ease; }
+    .card-hover:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(66, 99, 235, 0.15); }
     .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
     .fade-in.visible { opacity: 1; transform: translateY(0); }
     @media (prefers-reduced-motion: reduce) {
       .fade-in { opacity: 1; transform: none; transition: none; }
-      .card-clay:hover, .card-hover:hover { transform: none; }
+      .card-hover:hover { transform: none; }
     }
-    .skip-link { position: absolute; left: -9999px; top: 0; z-index: 999; background: #4f46e5; color: #fff; padding: 8px 16px; font-weight: 600; border-radius: 0 0 12px 0; }
+    .skip-link { position: absolute; left: -9999px; top: 0; z-index: 999; background: #2563EB; color: #fff; padding: 8px 16px; font-weight: 600; border-radius: 0 0 8px 0; }
     .skip-link:focus { left: 0; }
     summary { cursor: pointer; }
     html { scroll-padding-top: 80px; }
-    .nav-active { color: #4f46e5; border-bottom: 2px solid #4f46e5; }
-    /* Heading font */
-    h1, h2, h3, h4 { font-family: 'Crimson Pro', Georgia, serif; }
-    /* Clay button style */
-    .btn-clay {
-      border: 3px solid rgba(79, 70, 229, 0.2);
-      border-radius: 16px;
-      box-shadow: 4px 4px 12px rgba(79, 70, 229, 0.1), inset -1px -1px 4px rgba(79, 70, 229, 0.05);
-      transition: all 0.2s ease-out;
-    }
-    .btn-clay:hover { box-shadow: 6px 6px 16px rgba(79, 70, 229, 0.15), inset -1px -1px 4px rgba(79, 70, 229, 0.08); }
+    .nav-active { color: #4263eb; border-bottom: 2px solid #4263eb; }
   </style>
 </head>
-<body class="bg-[#EEF2FF] text-gray-800 font-sans antialiased">
+<body class="bg-white text-gray-800 font-sans antialiased">
 
   <!-- Skip link for keyboard accessibility -->
   <a href="#hvad-er-ai" class="skip-link">Spring til indhold</a>
 
   <!-- Navigation -->
-  <nav id="navbar" aria-label="Hovednavigation" class="fixed top-0 w-full bg-[#EEF2FF]/80 backdrop-blur-lg border-b border-brand-100 z-50 transition-all">
+  <nav id="navbar" aria-label="Hovednavigation" class="fixed top-0 w-full bg-white/80 backdrop-blur-lg border-b border-gray-100 z-50 transition-all">
     <div class="max-w-6xl mx-auto px-4 sm:px-6">
       <div class="flex items-center justify-between h-16">
         <a href="#" class="text-xl font-bold gradient-text">AI for Alle</a>
@@ -133,23 +99,23 @@
 
   <!-- Hero -->
   <section class="relative pt-32 pb-20 px-4 sm:px-6">
-    <div class="absolute inset-0 bg-gradient-to-br from-brand-50 via-[#EEF2FF] to-purple-50"></div>
-    <div class="absolute top-20 left-10 w-72 h-72 bg-brand-200/40 rounded-full blur-3xl"></div>
-    <div class="absolute bottom-10 right-10 w-96 h-96 bg-orange-200/20 rounded-full blur-3xl"></div>
+    <div class="absolute inset-0 bg-gradient-to-br from-brand-50 via-white to-purple-50"></div>
+    <div class="absolute top-20 left-10 w-72 h-72 bg-brand-200/30 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-10 right-10 w-96 h-96 bg-purple-200/20 rounded-full blur-3xl"></div>
     <div class="relative max-w-4xl mx-auto text-center">
       <h1 class="text-4xl sm:text-5xl md:text-6xl font-900 tracking-tight text-gray-900 mb-6 leading-tight">
         Forstå <span class="gradient-text">kunstig intelligens</span><br />uden at være nørd
       </h1>
-      <p class="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto mb-10 leading-relaxed">
+      <p class="text-lg sm:text-xl text-gray-500 max-w-2xl mx-auto mb-10 leading-relaxed">
         En simpel og ærlig guide til AI. Hvad det er, hvad det kan, og hvorfor alle snakker om det. Skrevet så alle kan forstå det.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <div class="relative" id="hero-dropdown">
-          <button id="hero-dropdown-btn" class="btn-clay inline-flex items-center justify-center gap-2 bg-brand-600 text-white font-semibold px-8 py-3.5 hover:bg-brand-700 transition-colors shadow-lg shadow-brand-600/25 cursor-pointer" aria-expanded="false" aria-haspopup="true">
+          <button id="hero-dropdown-btn" class="inline-flex items-center justify-center gap-2 bg-brand-600 text-white font-semibold px-8 py-3.5 rounded-xl hover:bg-brand-700 transition-colors shadow-lg shadow-brand-600/25 cursor-pointer" aria-expanded="false" aria-haspopup="true">
             Spring til et emne
             <svg class="w-4 h-4 transition-transform" id="hero-dropdown-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
           </button>
-          <div id="hero-dropdown-menu" class="hidden absolute left-1/2 -translate-x-1/2 mt-2 w-64 bg-white rounded-[20px] shadow-xl border-3 border-brand-100 overflow-hidden z-50" style="border-width: 3px;">
+          <div id="hero-dropdown-menu" class="hidden absolute left-1/2 -translate-x-1/2 mt-2 w-64 bg-white rounded-xl shadow-xl border border-gray-100 overflow-hidden z-50">
             <a href="#hvad-er-ai" class="hero-drop-link flex items-center gap-3 px-4 py-3 text-sm text-gray-700 hover:bg-brand-50 hover:text-brand-700 transition-colors">
               <span class="w-8 h-8 bg-brand-100 rounded-lg flex items-center justify-center shrink-0">
                 <svg class="w-4 h-4 text-brand-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
@@ -212,7 +178,7 @@
             </a>
           </div>
         </div>
-        <a href="#ordliste" class="btn-clay inline-flex items-center justify-center gap-2 bg-white text-gray-700 font-semibold px-8 py-3.5 hover:bg-gray-50 transition-colors cursor-pointer">
+        <a href="#ordliste" class="inline-flex items-center justify-center gap-2 bg-white text-gray-700 font-semibold px-8 py-3.5 rounded-xl border border-gray-200 hover:bg-gray-50 transition-colors cursor-pointer">
           Se ordlisten
         </a>
       </div>
@@ -225,19 +191,19 @@
       <div class="fade-in">
         <span class="text-brand-600 font-semibold text-sm uppercase tracking-wider">Grundlaget</span>
         <h2 class="text-3xl sm:text-4xl font-800 text-gray-900 mt-2 mb-6">Hvad er AI egentlig?</h2>
-        <div class="bg-gradient-to-r from-brand-50 to-purple-50 rounded-[24px] p-6 sm:p-8 mb-8 border-[3px] border-brand-200" style="box-shadow: 6px 6px 16px rgba(79, 70, 229, 0.08), inset -2px -2px 6px rgba(79, 70, 229, 0.04);">
+        <div class="bg-gradient-to-r from-brand-50 to-purple-50 rounded-2xl p-6 sm:p-8 mb-8 border border-brand-100">
           <p class="text-lg text-gray-700 leading-relaxed mb-4">
             <strong>Kunstig intelligens (AI)</strong> er software der kan lære af eksempler, i stedet for at følge faste regler. Tænk på det sådan:
           </p>
           <div class="grid sm:grid-cols-2 gap-4 mt-6">
-            <div class="bg-white rounded-[16px] p-5 border-[3px] border-gray-200" style="box-shadow: 4px 4px 12px rgba(0,0,0,0.04);">
+            <div class="bg-white rounded-xl p-5 border border-gray-100">
               <div class="w-9 h-9 bg-gray-100 rounded-lg flex items-center justify-center mb-2">
                 <svg class="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
               </div>
               <h4 class="font-bold text-gray-900 mb-1">Traditionel software</h4>
               <p class="text-sm text-gray-600">Menneske skriver regler: "Hvis X, gør Y". Programmet gør <em>præcis</em> hvad det er programmeret til.</p>
             </div>
-            <div class="bg-white rounded-[16px] p-5 border-[3px] border-brand-300 ring-2 ring-brand-100" style="box-shadow: 4px 4px 12px rgba(79, 70, 229, 0.08);">
+            <div class="bg-white rounded-xl p-5 border border-brand-200 ring-2 ring-brand-100">
               <div class="w-9 h-9 bg-brand-100 rounded-lg flex items-center justify-center mb-2">
                 <svg class="w-5 h-5 text-brand-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
               </div>
@@ -248,13 +214,13 @@
         </div>
 
         <!-- Interaktiv gætte-demo -->
-        <div class="fade-in card-clay p-6 sm:p-8 mb-8">
+        <div class="fade-in bg-white rounded-2xl p-6 sm:p-8 mb-8 border border-gray-200 shadow-sm">
           <h3 class="text-xl font-bold text-gray-900 mb-2">Prøv det selv: AI er bare en gætte-maskine</h3>
           <p class="text-gray-500 text-sm mb-6">Hele hemmeligheden bag AI er at gætte det næste ord. Prøv at gøre det samme — klik på det ord du tror kommer næst.</p>
 
           <div id="guess-game" class="space-y-6">
             <!-- Sætning der bygges op -->
-            <div class="bg-white rounded-[16px] p-5 min-h-[80px] flex items-center border-[3px] border-brand-100" style="box-shadow: inset -2px -2px 6px rgba(79, 70, 229, 0.04);">
+            <div class="bg-gray-50 rounded-xl p-5 min-h-[80px] flex items-center">
               <p class="text-lg sm:text-xl font-medium text-gray-900">
                 <span id="guess-sentence">Hovedstaden i Danmark er</span><span id="guess-cursor" class="inline-block w-0.5 h-6 bg-brand-500 ml-1 animate-pulse align-middle"></span>
               </p>
@@ -296,17 +262,17 @@
   </section>
 
   <!-- Typer af AI-modeller -->
-  <section id="modeller" class="py-20 px-4 sm:px-6 bg-white/60">
+  <section id="modeller" class="py-20 px-4 sm:px-6 bg-gray-50">
     <div class="max-w-6xl mx-auto">
       <div class="text-center mb-14 fade-in">
         <span class="text-brand-600 font-semibold text-sm uppercase tracking-wider">Overblik</span>
         <h2 class="text-3xl sm:text-4xl font-800 text-gray-900 mt-2 mb-4">De forskellige typer AI</h2>
-        <p class="text-gray-600 max-w-2xl mx-auto">Der findes flere slags AI, og de er gode til forskellige ting. Her er de vigtigste typer du møder i hverdagen.</p>
+        <p class="text-gray-500 max-w-2xl mx-auto">Der findes flere slags AI, og de er gode til forskellige ting. Her er de vigtigste typer du møder i hverdagen.</p>
       </div>
 
       <div class="grid md:grid-cols-2 gap-6">
         <!-- Sprogmodeller -->
-        <div class="fade-in card-clay p-6 sm:p-8">
+        <div class="fade-in card-hover bg-white rounded-2xl p-6 sm:p-8 border border-gray-100">
           <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-4">
             <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"/></svg>
           </div>
@@ -320,7 +286,7 @@
         </div>
 
         <!-- Billedmodeller -->
-        <div class="fade-in card-clay p-6 sm:p-8">
+        <div class="fade-in card-hover bg-white rounded-2xl p-6 sm:p-8 border border-gray-100">
           <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mb-4">
             <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
           </div>
@@ -334,7 +300,7 @@
         </div>
 
         <!-- Lydmodeller -->
-        <div class="fade-in card-clay p-6 sm:p-8">
+        <div class="fade-in card-hover bg-white rounded-2xl p-6 sm:p-8 border border-gray-100">
           <div class="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center mb-4">
             <svg class="w-6 h-6 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"/></svg>
           </div>
@@ -348,7 +314,7 @@
         </div>
 
         <!-- Videomodeller -->
-        <div class="fade-in card-clay p-6 sm:p-8">
+        <div class="fade-in card-hover bg-white rounded-2xl p-6 sm:p-8 border border-gray-100">
           <div class="w-12 h-12 bg-rose-100 rounded-xl flex items-center justify-center mb-4">
             <svg class="w-6 h-6 text-rose-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
           </div>
@@ -362,7 +328,7 @@
         </div>
 
         <!-- Kode -->
-        <div class="fade-in card-clay p-6 sm:p-8">
+        <div class="fade-in card-hover bg-white rounded-2xl p-6 sm:p-8 border border-gray-100">
           <div class="w-12 h-12 bg-amber-100 rounded-xl flex items-center justify-center mb-4">
             <svg class="w-6 h-6 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
           </div>
@@ -376,7 +342,7 @@
         </div>
 
         <!-- Søgning -->
-        <div class="fade-in card-clay p-6 sm:p-8">
+        <div class="fade-in card-hover bg-white rounded-2xl p-6 sm:p-8 border border-gray-100">
           <div class="w-12 h-12 bg-cyan-100 rounded-xl flex items-center justify-center mb-4">
             <svg class="w-6 h-6 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
           </div>
@@ -398,7 +364,7 @@
       <div class="text-center mb-14 fade-in">
         <span class="text-brand-600 font-semibold text-sm uppercase tracking-wider">Det næste skridt</span>
         <h2 class="text-3xl sm:text-4xl font-800 text-gray-900 mt-2 mb-4">AI-agenter og workflows</h2>
-        <p class="text-gray-600 max-w-2xl mx-auto">AI er gået fra at svare på spørgsmål til at kunne <em>handle</em> selvstændigt. Her er hvad det betyder.</p>
+        <p class="text-gray-500 max-w-2xl mx-auto">AI er gået fra at svare på spørgsmål til at kunne <em>handle</em> selvstændigt. Her er hvad det betyder.</p>
       </div>
 
       <!-- Forklaring -->
@@ -426,7 +392,7 @@
       </div>
 
       <!-- Workflow forklaring -->
-      <div class="fade-in card-clay p-6 sm:p-8 mb-8">
+      <div class="fade-in bg-white rounded-2xl p-6 sm:p-8 mb-8 border border-gray-100">
         <h3 class="text-xl font-bold text-gray-900 mb-4">Hvad er et AI-workflow?</h3>
         <p class="text-gray-600 leading-relaxed mb-6">
           Et <strong>workflow</strong> er en kæde af trin som AI'en udfører automatisk. I stedet for at du manuelt kopierer output fra ét værktøj til det næste, binder et workflow det hele sammen. Det er som at sætte dominobrikker op — du skubber den første, og resten følger af sig selv.
@@ -456,7 +422,7 @@
 
       <!-- Konkrete eksempler -->
       <div class="grid md:grid-cols-2 gap-6">
-        <div class="fade-in card-clay p-6">
+        <div class="fade-in card-hover bg-white rounded-2xl p-6 border border-gray-100">
           <div class="w-12 h-12 bg-violet-100 rounded-xl flex items-center justify-center mb-4">
             <svg class="w-6 h-6 text-violet-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
           </div>
@@ -465,7 +431,7 @@
           <p class="text-xs text-gray-400">Eksempel: "Gå ind på min bank, download kontoudtog for marts, og lav et regneark med udgifterne."</p>
         </div>
 
-        <div class="fade-in card-clay p-6">
+        <div class="fade-in card-hover bg-white rounded-2xl p-6 border border-gray-100">
           <div class="w-12 h-12 bg-indigo-100 rounded-xl flex items-center justify-center mb-4">
             <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
           </div>
@@ -474,7 +440,7 @@
           <p class="text-xs text-gray-400">Eksempel: "Byg en hjemmeside der forklarer AI til almindelige mennesker" — det er faktisk præcis sådan denne side er lavet.</p>
         </div>
 
-        <div class="fade-in card-clay p-6">
+        <div class="fade-in card-hover bg-white rounded-2xl p-6 border border-gray-100">
           <div class="w-12 h-12 bg-sky-100 rounded-xl flex items-center justify-center mb-4">
             <svg class="w-6 h-6 text-sky-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
           </div>
@@ -483,7 +449,7 @@
           <p class="text-xs text-gray-400">Eksempel: "Hver gang jeg får en faktura på email, gem den i Google Drive og opdater mit budget-ark."</p>
         </div>
 
-        <div class="fade-in card-clay p-6">
+        <div class="fade-in card-hover bg-white rounded-2xl p-6 border border-gray-100">
           <div class="w-12 h-12 bg-pink-100 rounded-xl flex items-center justify-center mb-4">
             <svg class="w-6 h-6 text-pink-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
           </div>
@@ -510,19 +476,19 @@
       <div class="fade-in mt-8">
         <h3 class="text-lg font-bold text-gray-900 mb-4">Populære agent-værktøjer</h3>
         <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
-          <div class="bg-white rounded-[16px] p-4 border-[3px] border-brand-100 text-center">
+          <div class="bg-white rounded-xl p-4 border border-gray-100 text-center">
             <p class="font-semibold text-gray-900 text-sm">Claude Code</p>
             <p class="text-xs text-gray-500 mt-1">Anthropic's kode-agent</p>
           </div>
-          <div class="bg-white rounded-[16px] p-4 border-[3px] border-brand-100 text-center">
+          <div class="bg-white rounded-xl p-4 border border-gray-100 text-center">
             <p class="font-semibold text-gray-900 text-sm">ChatGPT Operator</p>
             <p class="text-xs text-gray-500 mt-1">OpenAI's browser-agent</p>
           </div>
-          <div class="bg-white rounded-[16px] p-4 border-[3px] border-brand-100 text-center">
+          <div class="bg-white rounded-xl p-4 border border-gray-100 text-center">
             <p class="font-semibold text-gray-900 text-sm">Zapier / Make</p>
             <p class="text-xs text-gray-500 mt-1">AI-workflow builders</p>
           </div>
-          <div class="bg-white rounded-[16px] p-4 border-[3px] border-brand-100 text-center">
+          <div class="bg-white rounded-xl p-4 border border-gray-100 text-center">
             <p class="font-semibold text-gray-900 text-sm">Cursor / Windsurf</p>
             <p class="text-xs text-gray-500 mt-1">AI-drevne kode-editorer</p>
           </div>
@@ -532,17 +498,17 @@
   </section>
 
   <!-- Platforme sammenligning -->
-  <section id="platforme" class="py-20 px-4 sm:px-6 bg-white/60">
+  <section id="platforme" class="py-20 px-4 sm:px-6 bg-gray-50">
     <div class="max-w-6xl mx-auto">
       <div class="text-center mb-14 fade-in">
         <span class="text-brand-600 font-semibold text-sm uppercase tracking-wider">Sammenligning</span>
         <h2 class="text-3xl sm:text-4xl font-800 text-gray-900 mt-2 mb-4">De store AI-platforme</h2>
-        <p class="text-gray-600 max-w-2xl mx-auto">Hvem laver AI'en, og hvad er forskellen? Her er de vigtigste spillere.</p>
+        <p class="text-gray-500 max-w-2xl mx-auto">Hvem laver AI'en, og hvad er forskellen? Her er de vigtigste spillere.</p>
       </div>
 
       <div class="grid gap-6">
         <!-- ChatGPT -->
-        <div class="fade-in card-clay overflow-hidden">
+        <div class="fade-in card-hover bg-white rounded-2xl border border-gray-100 overflow-hidden">
           <div class="sm:flex">
             <div class="sm:w-2 bg-emerald-500 shrink-0"></div>
             <div class="p-6 sm:p-8 flex-1">
@@ -564,7 +530,7 @@
         </div>
 
         <!-- Claude -->
-        <div class="fade-in card-clay overflow-hidden">
+        <div class="fade-in card-hover bg-white rounded-2xl border border-gray-100 overflow-hidden">
           <div class="sm:flex">
             <div class="sm:w-2 bg-brand-500 shrink-0"></div>
             <div class="p-6 sm:p-8 flex-1">
@@ -585,7 +551,7 @@
         </div>
 
         <!-- Gemini -->
-        <div class="fade-in card-clay overflow-hidden">
+        <div class="fade-in card-hover bg-white rounded-2xl border border-gray-100 overflow-hidden">
           <div class="sm:flex">
             <div class="sm:w-2 bg-blue-500 shrink-0"></div>
             <div class="p-6 sm:p-8 flex-1">
@@ -606,7 +572,7 @@
         </div>
 
         <!-- Copilot -->
-        <div class="fade-in card-clay overflow-hidden">
+        <div class="fade-in card-hover bg-white rounded-2xl border border-gray-100 overflow-hidden">
           <div class="sm:flex">
             <div class="sm:w-2 bg-cyan-500 shrink-0"></div>
             <div class="p-6 sm:p-8 flex-1">
@@ -626,7 +592,7 @@
         </div>
 
         <!-- Perplexity -->
-        <div class="fade-in card-clay overflow-hidden">
+        <div class="fade-in card-hover bg-white rounded-2xl border border-gray-100 overflow-hidden">
           <div class="sm:flex">
             <div class="sm:w-2 bg-teal-500 shrink-0"></div>
             <div class="p-6 sm:p-8 flex-1">
@@ -646,7 +612,7 @@
         </div>
 
         <!-- Open Source -->
-        <div class="fade-in card-clay overflow-hidden">
+        <div class="fade-in card-hover bg-white rounded-2xl border border-gray-100 overflow-hidden">
           <div class="sm:flex">
             <div class="sm:w-2 bg-orange-500 shrink-0"></div>
             <div class="p-6 sm:p-8 flex-1">
@@ -669,16 +635,16 @@
   </section>
 
   <!-- Brug AI -->
-  <section id="brug-ai" class="py-20 px-4 sm:px-6 bg-white/60">
+  <section id="brug-ai" class="py-20 px-4 sm:px-6 bg-gray-50">
     <div class="max-w-6xl mx-auto">
       <div class="text-center mb-14 fade-in">
         <span class="text-brand-600 font-semibold text-sm uppercase tracking-wider">Praktisk</span>
         <h2 class="text-3xl sm:text-4xl font-800 text-gray-900 mt-2 mb-4">Hvad kan du bruge AI til?</h2>
-        <p class="text-gray-600 max-w-2xl mx-auto">Her er konkrete eksempler på hvad AI kan hjælpe med i hverdagen og på arbejdet.</p>
+        <p class="text-gray-500 max-w-2xl mx-auto">Her er konkrete eksempler på hvad AI kan hjælpe med i hverdagen og på arbejdet.</p>
       </div>
 
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div class="fade-in card-clay p-6">
+        <div class="fade-in bg-white rounded-2xl p-6 border border-gray-100 card-hover">
           <div class="w-10 h-10 bg-brand-100 rounded-lg flex items-center justify-center mb-4">
             <svg class="w-5 h-5 text-brand-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>
           </div>
@@ -687,7 +653,7 @@
           <p class="text-xs text-gray-400">Tip: Giv AI'en kontekst. Jo mere du fortæller om formålet, jo bedre resultater.</p>
         </div>
 
-        <div class="fade-in card-clay p-6">
+        <div class="fade-in bg-white rounded-2xl p-6 border border-gray-100 card-hover">
           <div class="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
             <svg class="w-5 h-5 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
           </div>
@@ -696,7 +662,7 @@
           <p class="text-xs text-gray-400">Tip: Bed AI'en bruge analogier du kender fra din hverdag.</p>
         </div>
 
-        <div class="fade-in card-clay p-6">
+        <div class="fade-in bg-white rounded-2xl p-6 border border-gray-100 card-hover">
           <div class="w-10 h-10 bg-amber-100 rounded-lg flex items-center justify-center mb-4">
             <svg class="w-5 h-5 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
           </div>
@@ -705,7 +671,7 @@
           <p class="text-xs text-gray-400">Tip: Upload dokumenter direkte og bed AI'en trække hovedpointerne ud.</p>
         </div>
 
-        <div class="fade-in card-clay p-6">
+        <div class="fade-in bg-white rounded-2xl p-6 border border-gray-100 card-hover">
           <div class="w-10 h-10 bg-rose-100 rounded-lg flex items-center justify-center mb-4">
             <svg class="w-5 h-5 text-rose-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"/></svg>
           </div>
@@ -714,7 +680,7 @@
           <p class="text-xs text-gray-400">Tip: Vær detaljeret i dine beskrivelser. "Minimalistisk logo i blå toner" er bedre end bare "et logo".</p>
         </div>
 
-        <div class="fade-in card-clay p-6">
+        <div class="fade-in bg-white rounded-2xl p-6 border border-gray-100 card-hover">
           <div class="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center mb-4">
             <svg class="w-5 h-5 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
           </div>
@@ -723,7 +689,7 @@
           <p class="text-xs text-gray-400">Tip: Start med at beskrive hvad du vil have, ikke hvordan det skal laves.</p>
         </div>
 
-        <div class="fade-in card-clay p-6">
+        <div class="fade-in bg-white rounded-2xl p-6 border border-gray-100 card-hover">
           <div class="w-10 h-10 bg-cyan-100 rounded-lg flex items-center justify-center mb-4">
             <svg class="w-5 h-5 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
           </div>
@@ -763,12 +729,12 @@
       <div class="text-center mb-14 fade-in">
         <span class="text-brand-600 font-semibold text-sm uppercase tracking-wider">Faktatjek</span>
         <h2 class="text-3xl sm:text-4xl font-800 text-gray-900 mt-2 mb-4">Myter vs. Fakta</h2>
-        <p class="text-gray-600 max-w-2xl mx-auto">Der er mange misforståelser om AI. Her rydder vi op i de mest udbredte.</p>
+        <p class="text-gray-500 max-w-2xl mx-auto">Der er mange misforståelser om AI. Her rydder vi op i de mest udbredte.</p>
       </div>
 
       <div class="fade-in space-y-4">
         <!-- Myte 1 -->
-        <div class="card-clay p-6">
+        <div class="bg-white rounded-2xl border border-gray-100 p-6 card-hover">
           <div class="flex items-start gap-4">
             <div class="w-10 h-10 bg-red-100 rounded-xl flex items-center justify-center shrink-0 mt-0.5">
               <svg class="w-5 h-5 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
@@ -782,7 +748,7 @@
         </div>
 
         <!-- Myte 2 -->
-        <div class="card-clay p-6">
+        <div class="bg-white rounded-2xl border border-gray-100 p-6 card-hover">
           <div class="flex items-start gap-4">
             <div class="w-10 h-10 bg-red-100 rounded-xl flex items-center justify-center shrink-0 mt-0.5">
               <svg class="w-5 h-5 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
@@ -796,7 +762,7 @@
         </div>
 
         <!-- Myte 3 -->
-        <div class="card-clay p-6">
+        <div class="bg-white rounded-2xl border border-gray-100 p-6 card-hover">
           <div class="flex items-start gap-4">
             <div class="w-10 h-10 bg-red-100 rounded-xl flex items-center justify-center shrink-0 mt-0.5">
               <svg class="w-5 h-5 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
@@ -810,7 +776,7 @@
         </div>
 
         <!-- Myte 4 -->
-        <div class="card-clay p-6">
+        <div class="bg-white rounded-2xl border border-gray-100 p-6 card-hover">
           <div class="flex items-start gap-4">
             <div class="w-10 h-10 bg-red-100 rounded-xl flex items-center justify-center shrink-0 mt-0.5">
               <svg class="w-5 h-5 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
@@ -824,7 +790,7 @@
         </div>
 
         <!-- Fakta -->
-        <div class="card-clay p-6">
+        <div class="bg-white rounded-2xl border border-gray-100 p-6 card-hover">
           <div class="flex items-start gap-4">
             <div class="w-10 h-10 bg-emerald-100 rounded-xl flex items-center justify-center shrink-0 mt-0.5">
               <svg class="w-5 h-5 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
@@ -841,17 +807,17 @@
   </section>
 
   <!-- Prøv det selv -->
-  <section id="proev" class="py-20 px-4 sm:px-6 bg-white/60">
+  <section id="proev" class="py-20 px-4 sm:px-6 bg-gray-50">
     <div class="max-w-6xl mx-auto">
       <div class="text-center mb-14 fade-in">
         <span class="text-brand-600 font-semibold text-sm uppercase tracking-wider">Kom i gang</span>
         <h2 class="text-3xl sm:text-4xl font-800 text-gray-900 mt-2 mb-4">Prøv det selv (gratis)</h2>
-        <p class="text-gray-600 max-w-2xl mx-auto">Den bedste måde at forstå AI er at prøve den. Her er de bedste gratis muligheder — og hvad du kan sige som det første.</p>
+        <p class="text-gray-500 max-w-2xl mx-auto">Den bedste måde at forstå AI er at prøve den. Her er de bedste gratis muligheder — og hvad du kan sige som det første.</p>
       </div>
 
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 fade-in">
         <!-- ChatGPT -->
-        <div class="card-clay p-6">
+        <div class="bg-white rounded-2xl p-6 border border-gray-100 card-hover">
           <div class="flex items-center gap-3 mb-4">
             <div class="w-10 h-10 bg-emerald-100 rounded-xl flex items-center justify-center">
               <svg class="w-5 h-5 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"/></svg>
@@ -873,7 +839,7 @@
         </div>
 
         <!-- Claude -->
-        <div class="card-clay p-6">
+        <div class="bg-white rounded-2xl p-6 border border-gray-100 card-hover">
           <div class="flex items-center gap-3 mb-4">
             <div class="w-10 h-10 bg-brand-100 rounded-xl flex items-center justify-center">
               <svg class="w-5 h-5 text-brand-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
@@ -895,7 +861,7 @@
         </div>
 
         <!-- Perplexity -->
-        <div class="card-clay p-6">
+        <div class="bg-white rounded-2xl p-6 border border-gray-100 card-hover">
           <div class="flex items-center gap-3 mb-4">
             <div class="w-10 h-10 bg-teal-100 rounded-xl flex items-center justify-center">
               <svg class="w-5 h-5 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
@@ -917,7 +883,7 @@
         </div>
 
         <!-- Midjourney / billeder -->
-        <div class="card-clay p-6">
+        <div class="bg-white rounded-2xl p-6 border border-gray-100 card-hover">
           <div class="flex items-center gap-3 mb-4">
             <div class="w-10 h-10 bg-purple-100 rounded-xl flex items-center justify-center">
               <svg class="w-5 h-5 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
@@ -939,7 +905,7 @@
         </div>
 
         <!-- Google Gemini -->
-        <div class="card-clay p-6">
+        <div class="bg-white rounded-2xl p-6 border border-gray-100 card-hover">
           <div class="flex items-center gap-3 mb-4">
             <div class="w-10 h-10 bg-blue-100 rounded-xl flex items-center justify-center">
               <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
@@ -961,7 +927,7 @@
         </div>
 
         <!-- Suno -->
-        <div class="card-clay p-6">
+        <div class="bg-white rounded-2xl p-6 border border-gray-100 card-hover">
           <div class="flex items-center gap-3 mb-4">
             <div class="w-10 h-10 bg-rose-100 rounded-xl flex items-center justify-center">
               <svg class="w-5 h-5 text-rose-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"/></svg>
@@ -991,12 +957,12 @@
       <div class="text-center mb-14 fade-in">
         <span class="text-brand-600 font-semibold text-sm uppercase tracking-wider">Vær smart</span>
         <h2 class="text-3xl sm:text-4xl font-800 text-gray-900 mt-2 mb-4">Sikkerhed & Privatliv</h2>
-        <p class="text-gray-600 max-w-2xl mx-auto">AI er et kraftfuldt værktøj, men der er ting du bør vide for at bruge det klogt.</p>
+        <p class="text-gray-500 max-w-2xl mx-auto">AI er et kraftfuldt værktøj, men der er ting du bør vide for at bruge det klogt.</p>
       </div>
 
       <div class="fade-in grid sm:grid-cols-2 gap-6 mb-8">
         <!-- Del IKKE -->
-        <div class="bg-red-50 rounded-[20px] p-6 border-[3px] border-red-200" style="box-shadow: 4px 4px 12px rgba(220, 38, 38, 0.06);">
+        <div class="bg-red-50 rounded-2xl p-6 border border-red-100">
           <div class="flex items-center gap-3 mb-4">
             <div class="w-10 h-10 bg-red-100 rounded-xl flex items-center justify-center">
               <svg class="w-5 h-5 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636"/></svg>
@@ -1028,7 +994,7 @@
         </div>
 
         <!-- Er OK -->
-        <div class="bg-emerald-50 rounded-[20px] p-6 border-[3px] border-emerald-200" style="box-shadow: 4px 4px 12px rgba(5, 150, 105, 0.06);">
+        <div class="bg-emerald-50 rounded-2xl p-6 border border-emerald-100">
           <div class="flex items-center gap-3 mb-4">
             <div class="w-10 h-10 bg-emerald-100 rounded-xl flex items-center justify-center">
               <svg class="w-5 h-5 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
@@ -1062,7 +1028,7 @@
 
       <!-- Ekstra tips -->
       <div class="fade-in space-y-4">
-        <div class="bg-white rounded-[16px] p-5 border-[3px] border-brand-100 flex items-start gap-4">
+        <div class="bg-white rounded-xl p-5 border border-gray-100 flex items-start gap-4">
           <div class="w-8 h-8 bg-brand-100 rounded-lg flex items-center justify-center shrink-0">
             <svg class="w-4 h-4 text-brand-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
           </div>
@@ -1071,7 +1037,7 @@
             <p class="text-xs text-gray-600">De fleste AI-tjenester har en indstilling hvor du kan fravælge at dine samtaler bruges til træning. Find den under Indstillinger/Privacy.</p>
           </div>
         </div>
-        <div class="bg-white rounded-[16px] p-5 border-[3px] border-brand-100 flex items-start gap-4">
+        <div class="bg-white rounded-xl p-5 border border-gray-100 flex items-start gap-4">
           <div class="w-8 h-8 bg-brand-100 rounded-lg flex items-center justify-center shrink-0">
             <svg class="w-4 h-4 text-brand-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
           </div>
@@ -1080,7 +1046,7 @@
             <p class="text-xs text-gray-600">AI kan give nyttige startpunkter, men er ikke en erstatning for en læge, advokat eller anden fagperson. Brug den til at forberede dig, ikke til at tage endelige beslutninger.</p>
           </div>
         </div>
-        <div class="bg-white rounded-[16px] p-5 border-[3px] border-brand-100 flex items-start gap-4">
+        <div class="bg-white rounded-xl p-5 border border-gray-100 flex items-start gap-4">
           <div class="w-8 h-8 bg-brand-100 rounded-lg flex items-center justify-center shrink-0">
             <svg class="w-4 h-4 text-brand-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
           </div>
@@ -1094,17 +1060,17 @@
   </section>
 
   <!-- Spørg AI'en -->
-  <section id="spoerg" class="py-20 px-4 sm:px-6 bg-gradient-to-br from-brand-50/50 via-[#EEF2FF] to-purple-50/50">
+  <section id="spoerg" class="py-20 px-4 sm:px-6 bg-gradient-to-br from-brand-50 via-white to-purple-50">
     <div class="max-w-3xl mx-auto">
       <div class="text-center mb-10 fade-in">
         <span class="text-brand-600 font-semibold text-sm uppercase tracking-wider">Interaktiv</span>
         <h2 class="text-3xl sm:text-4xl font-800 text-gray-900 mt-2 mb-4">Spørg om AI</h2>
-        <p class="text-gray-600 max-w-2xl mx-auto">Har du et spørgsmål om kunstig intelligens? Skriv det herunder og få svar med det samme. Prøv f.eks. "hvad er ChatGPT?" eller "kan AI tænke?"</p>
+        <p class="text-gray-500 max-w-2xl mx-auto">Har du et spørgsmål om kunstig intelligens? Skriv det herunder og få svar med det samme. Prøv f.eks. "hvad er ChatGPT?" eller "kan AI tænke?"</p>
       </div>
 
-      <div class="fade-in card-clay overflow-hidden">
+      <div class="fade-in bg-white rounded-2xl border border-gray-200 shadow-lg overflow-hidden">
         <!-- Chat header -->
-        <div class="flex items-center gap-3 px-5 py-3.5 bg-gradient-to-r from-brand-600 to-brand-700 text-white rounded-t-[17px]">
+        <div class="flex items-center gap-3 px-5 py-3.5 bg-gradient-to-r from-brand-600 to-brand-700 text-white">
           <div class="w-9 h-9 bg-white/20 rounded-full flex items-center justify-center">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
           </div>
@@ -1143,8 +1109,7 @@
 
         <!-- Input area -->
         <div class="border-t border-gray-100 px-4 py-3 flex items-center gap-2 bg-gray-50/50">
-          <label for="chat-input" class="sr-only">Skriv dit spørgsmål om AI</label>
-          <input id="chat-input" type="text" placeholder="Skriv dit spørgsmål om AI..." class="flex-1 bg-white border-[2px] border-brand-100 rounded-[14px] px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent" onkeydown="if(event.key==='Enter')sendChat()" />
+          <input id="chat-input" type="text" placeholder="Skriv dit spørgsmål om AI..." class="flex-1 bg-white border border-gray-200 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent" onkeydown="if(event.key==='Enter')sendChat()" />
           <button onclick="sendChat()" class="w-10 h-10 bg-brand-600 text-white rounded-xl flex items-center justify-center hover:bg-brand-700 transition-colors cursor-pointer shrink-0">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/></svg>
           </button>
@@ -1156,16 +1121,16 @@
   </section>
 
   <!-- Ordliste -->
-  <section id="ordliste" class="py-20 px-4 sm:px-6 bg-white/60">
+  <section id="ordliste" class="py-20 px-4 sm:px-6 bg-gray-50">
     <div class="max-w-4xl mx-auto">
       <div class="text-center mb-14 fade-in">
         <span class="text-brand-600 font-semibold text-sm uppercase tracking-wider">Reference</span>
         <h2 class="text-3xl sm:text-4xl font-800 text-gray-900 mt-2 mb-4">AI-ordliste</h2>
-        <p class="text-gray-600 max-w-2xl mx-auto">De vigtigste AI-begreber forklaret på almindeligt dansk.</p>
+        <p class="text-gray-500 max-w-2xl mx-auto">De vigtigste AI-begreber forklaret på almindeligt dansk.</p>
       </div>
 
       <div class="fade-in space-y-3">
-        <details class="group bg-white rounded-[16px] border-[3px] border-brand-100 overflow-hidden">
+        <details class="group bg-white rounded-xl border border-gray-100 overflow-hidden">
           <summary class="flex items-center justify-between p-5 cursor-pointer hover:bg-gray-50 transition-colors">
             <span class="font-semibold text-gray-900">LLM (Large Language Model)</span>
             <svg class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
@@ -1173,7 +1138,7 @@
           <div class="px-5 pb-5 text-gray-600 text-sm leading-relaxed">En "stor sprogmodel". Det er den type AI der driver ChatGPT, Claude og Gemini. Den har læst enorme mængder tekst og lært at forudsige hvad der bør komme efter en given tekst. Tænk på det som en ekstremt avanceret autoforslag.</div>
         </details>
 
-        <details class="group bg-white rounded-[16px] border-[3px] border-brand-100 overflow-hidden">
+        <details class="group bg-white rounded-xl border border-gray-100 overflow-hidden">
           <summary class="flex items-center justify-between p-5 cursor-pointer hover:bg-gray-50 transition-colors">
             <span class="font-semibold text-gray-900">Prompt</span>
             <svg class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
@@ -1181,7 +1146,7 @@
           <div class="px-5 pb-5 text-gray-600 text-sm leading-relaxed">Det du skriver til AI'en. Din besked, dit spørgsmål, din instruktion. Kunsten at skrive gode prompts kaldes "prompt engineering", men det er egentlig bare at lære at kommunikere klart med AI'en.</div>
         </details>
 
-        <details class="group bg-white rounded-[16px] border-[3px] border-brand-100 overflow-hidden">
+        <details class="group bg-white rounded-xl border border-gray-100 overflow-hidden">
           <summary class="flex items-center justify-between p-5 cursor-pointer hover:bg-gray-50 transition-colors">
             <span class="font-semibold text-gray-900">Hallucination</span>
             <svg class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
@@ -1189,7 +1154,7 @@
           <div class="px-5 pb-5 text-gray-600 text-sm leading-relaxed">Når AI'en opfinder noget der lyder rigtigt, men er forkert. F.eks. opdigtede fakta, kilder der ikke eksisterer, eller forkerte tal. Det sker fordi AI'en forudsiger sandsynlige ord, ikke tjekker fakta. Derfor bør du altid dobbelttjekke vigtig information.</div>
         </details>
 
-        <details class="group bg-white rounded-[16px] border-[3px] border-brand-100 overflow-hidden">
+        <details class="group bg-white rounded-xl border border-gray-100 overflow-hidden">
           <summary class="flex items-center justify-between p-5 cursor-pointer hover:bg-gray-50 transition-colors">
             <span class="font-semibold text-gray-900">Token</span>
             <svg class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
@@ -1197,7 +1162,7 @@
           <div class="px-5 pb-5 text-gray-600 text-sm leading-relaxed">Den enhed AI'en tænker i. Et token er typisk et helt ord eller en del af et ord. "Kunstig intelligens" er ca. 3-4 tokens. Antallet af tokens bestemmer hvor meget AI'en kan læse og skrive ad gangen, og hvad det koster at bruge den.</div>
         </details>
 
-        <details class="group bg-white rounded-[16px] border-[3px] border-brand-100 overflow-hidden">
+        <details class="group bg-white rounded-xl border border-gray-100 overflow-hidden">
           <summary class="flex items-center justify-between p-5 cursor-pointer hover:bg-gray-50 transition-colors">
             <span class="font-semibold text-gray-900">Kontekstvindue</span>
             <svg class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
@@ -1205,7 +1170,7 @@
           <div class="px-5 pb-5 text-gray-600 text-sm leading-relaxed">Hvor meget tekst AI'en kan "huske" i en samtale. Tænk på det som AI'ens korttidshukommelse. Et stort kontekstvindue (f.eks. 200.000 tokens) betyder at den kan læse en hel bog og stadig huske starten når den når slutningen.</div>
         </details>
 
-        <details class="group bg-white rounded-[16px] border-[3px] border-brand-100 overflow-hidden">
+        <details class="group bg-white rounded-xl border border-gray-100 overflow-hidden">
           <summary class="flex items-center justify-between p-5 cursor-pointer hover:bg-gray-50 transition-colors">
             <span class="font-semibold text-gray-900">Træning</span>
             <svg class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
@@ -1213,7 +1178,7 @@
           <div class="px-5 pb-5 text-gray-600 text-sm leading-relaxed">Processen hvor AI'en lærer. Den bliver vist enorme mængder data (tekst, billeder, etc.) og justerer sine interne indstillinger for at blive bedre. Det koster millioner af kroner og tager uger-måneder. Når den er færdig, er den "frossen" og lærer ikke mere fra samtaler med dig.</div>
         </details>
 
-        <details class="group bg-white rounded-[16px] border-[3px] border-brand-100 overflow-hidden">
+        <details class="group bg-white rounded-xl border border-gray-100 overflow-hidden">
           <summary class="flex items-center justify-between p-5 cursor-pointer hover:bg-gray-50 transition-colors">
             <span class="font-semibold text-gray-900">Fine-tuning</span>
             <svg class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
@@ -1221,7 +1186,7 @@
           <div class="px-5 pb-5 text-gray-600 text-sm leading-relaxed">En form for ekstra træning hvor man tager en generel AI-model og specialiserer den til en bestemt opgave. Ligesom en læge der efter medicinuddannelsen specialiserer sig i hjertekirurgi.</div>
         </details>
 
-        <details class="group bg-white rounded-[16px] border-[3px] border-brand-100 overflow-hidden">
+        <details class="group bg-white rounded-xl border border-gray-100 overflow-hidden">
           <summary class="flex items-center justify-between p-5 cursor-pointer hover:bg-gray-50 transition-colors">
             <span class="font-semibold text-gray-900">Open source</span>
             <svg class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
@@ -1229,7 +1194,7 @@
           <div class="px-5 pb-5 text-gray-600 text-sm leading-relaxed">AI-modeller der er frit tilgængelige for alle. Du kan downloade dem, køre dem på din egen computer, og ændre dem. Modsat "lukkede" modeller som ChatGPT, hvor du kun kan bruge dem via firmaets hjemmeside. Llama (fra Meta/Facebook) er det mest kendte eksempel.</div>
         </details>
 
-        <details class="group bg-white rounded-[16px] border-[3px] border-brand-100 overflow-hidden">
+        <details class="group bg-white rounded-xl border border-gray-100 overflow-hidden">
           <summary class="flex items-center justify-between p-5 cursor-pointer hover:bg-gray-50 transition-colors">
             <span class="font-semibold text-gray-900">Multimodal</span>
             <svg class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
@@ -1237,7 +1202,7 @@
           <div class="px-5 pb-5 text-gray-600 text-sm leading-relaxed">En AI der forstår flere typer input: tekst, billeder, lyd, video. De fleste moderne AI'er er multimodale. Du kan f.eks. tage et billede af en menu på et fremmedsprog og bede AI'en oversætte det.</div>
         </details>
 
-        <details class="group bg-white rounded-[16px] border-[3px] border-brand-100 overflow-hidden">
+        <details class="group bg-white rounded-xl border border-gray-100 overflow-hidden">
           <summary class="flex items-center justify-between p-5 cursor-pointer hover:bg-gray-50 transition-colors">
             <span class="font-semibold text-gray-900">AGI (Artificial General Intelligence)</span>
             <svg class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
@@ -1245,7 +1210,7 @@
           <div class="px-5 pb-5 text-gray-600 text-sm leading-relaxed">Det ultimative mål: en AI der er lige så intelligent som et menneske på tværs af alle opgaver. Vi er ikke der endnu. Nutidens AI er "smal" — den er god til specifikke ting men har ikke ægte forståelse. Hvornår (eller om) AGI kommer er der stor uenighed om.</div>
         </details>
 
-        <details class="group bg-white rounded-[16px] border-[3px] border-brand-100 overflow-hidden">
+        <details class="group bg-white rounded-xl border border-gray-100 overflow-hidden">
           <summary class="flex items-center justify-between p-5 cursor-pointer hover:bg-gray-50 transition-colors">
             <span class="font-semibold text-gray-900">RAG (Retrieval-Augmented Generation)</span>
             <svg class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
@@ -1253,7 +1218,7 @@
           <div class="px-5 pb-5 text-gray-600 text-sm leading-relaxed">En teknik hvor AI'en slår op i en database eller på nettet før den svarer, i stedet for kun at bruge sin træning. Ligesom at en studerende må have bøger med til eksamen. Det gør svarene mere præcise og opdaterede.</div>
         </details>
 
-        <details class="group bg-white rounded-[16px] border-[3px] border-brand-100 overflow-hidden">
+        <details class="group bg-white rounded-xl border border-gray-100 overflow-hidden">
           <summary class="flex items-center justify-between p-5 cursor-pointer hover:bg-gray-50 transition-colors">
             <span class="font-semibold text-gray-900">API</span>
             <svg class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
@@ -1261,7 +1226,7 @@
           <div class="px-5 pb-5 text-gray-600 text-sm leading-relaxed">En måde for programmer at snakke med AI'en uden brugerfladen (chatten). Udviklere bruger API'er til at bygge AI ind i deres egne apps og hjemmesider. Når en app har "AI-funktioner" bruger den typisk en API til ChatGPT, Claude eller lignende.</div>
         </details>
 
-        <details class="group bg-white rounded-[16px] border-[3px] border-brand-100 overflow-hidden">
+        <details class="group bg-white rounded-xl border border-gray-100 overflow-hidden">
           <summary class="flex items-center justify-between p-5 cursor-pointer hover:bg-gray-50 transition-colors">
             <span class="font-semibold text-gray-900">AI-agent</span>
             <svg class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
@@ -1269,7 +1234,7 @@
           <div class="px-5 pb-5 text-gray-600 text-sm leading-relaxed">En AI der kan handle selvstændigt i flere trin. I stedet for bare at svare på spørgsmål, kan den bruge værktøjer, tage beslutninger og udføre opgaver. F.eks. kan den selv søge information, skrive kode, teste den, og rette fejl — alt sammen uden at du guider hvert trin.</div>
         </details>
 
-        <details class="group bg-white rounded-[16px] border-[3px] border-brand-100 overflow-hidden">
+        <details class="group bg-white rounded-xl border border-gray-100 overflow-hidden">
           <summary class="flex items-center justify-between p-5 cursor-pointer hover:bg-gray-50 transition-colors">
             <span class="font-semibold text-gray-900">Workflow</span>
             <svg class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
@@ -1277,7 +1242,7 @@
           <div class="px-5 pb-5 text-gray-600 text-sm leading-relaxed">En automatiseret kæde af AI-trin. Outputtet fra ét trin bruges som input til det næste. F.eks.: "Modtag email → opsummer indhold → skriv svar → send til godkendelse". Værktøjer som Zapier og Make gør det muligt at bygge workflows uden at kunne programmere.</div>
         </details>
 
-        <details class="group bg-white rounded-[16px] border-[3px] border-brand-100 overflow-hidden">
+        <details class="group bg-white rounded-xl border border-gray-100 overflow-hidden">
           <summary class="flex items-center justify-between p-5 cursor-pointer hover:bg-gray-50 transition-colors">
             <span class="font-semibold text-gray-900">MCP (Model Context Protocol)</span>
             <svg class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
@@ -1289,7 +1254,7 @@
   </section>
 
   <!-- Footer -->
-  <footer class="bg-brand-900 text-brand-300 py-12 px-4 sm:px-6">
+  <footer class="bg-gray-900 text-gray-400 py-12 px-4 sm:px-6">
     <div class="max-w-4xl mx-auto text-center">
       <p class="text-xl font-bold text-white mb-2 gradient-text">AI for Alle</p>
       <p class="text-sm mb-6">Lavet for at gøre kunstig intelligens forståeligt for alle.</p>
@@ -1305,7 +1270,7 @@
         <a href="#spoerg" class="hover:text-white transition-colors">Spørg</a>
         <a href="#ordliste" class="hover:text-white transition-colors">Ordliste</a>
       </div>
-      <div class="mt-8 pt-8 border-t border-brand-800 text-xs text-brand-400">
+      <div class="mt-8 pt-8 border-t border-gray-800 text-xs text-gray-500">
         Informationen på denne side er ment som en introduktion og kan ændre sig hurtigt. AI-landskabet udvikler sig konstant.
       </div>
     </div>
