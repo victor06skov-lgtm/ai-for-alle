@@ -82,8 +82,10 @@
     html.dark p { color: #cbd5e1; }
     html.dark em { color: #c4b5fd; }
     /* FIX: Info boxes and gradient boxes — explicit class for reliable dark mode */
-    html.dark .dark-infobox { background: #1e293b !important; background-image: none !important; border-color: #334155 !important; }
-    html.dark #spoerg .bg-gradient-to-br { background: #0f172a !important; background-image: none !important; }
+    html.dark .dark-infobox { background: #1e293b !important; background-image: none !important; border-color: #475569 !important; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4) !important; }
+    html.dark .dark-infobox .bg-white { background: #253348 !important; border-color: #475569 !important; box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2) !important; }
+    html.dark #spoerg { background: #0c1525 !important; background-image: none !important; }
+    html.dark #spoerg .bg-white { border-color: #475569 !important; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4) !important; }
     /* FIX: All white backgrounds — use background shorthand + background-image:none */
     html.dark .bg-white, html.dark [class*="bg-white"] { background: #1e293b !important; background-image: none !important; }
     /* Cards — lighter bg + visible border for contrast */
@@ -164,6 +166,21 @@
     html.dark footer a { color: #64748b !important; }
     html.dark footer a:hover { color: #e2e8f0 !important; }
     html.dark footer .border-gray-800 { border-color: #1e293b !important; }
+    /* Sikkerhed — colored boxes need visible borders + shadow */
+    html.dark #sikkerhed .bg-red-50 { border-color: #991b1b !important; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.35) !important; }
+    html.dark #sikkerhed .bg-emerald-50 { border-color: #065f46 !important; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.35) !important; }
+    html.dark #sikkerhed .bg-white { background: #1e293b !important; border-color: #475569 !important; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3) !important; }
+    /* Myter — stronger card contrast */
+    html.dark #myter .card-hover { background: #1e293b !important; border-color: #475569 !important; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4) !important; }
+    /* Agenter — workflow step boxes */
+    html.dark #agenter .dark-infobox .bg-brand-50 { box-shadow: 0 1px 6px rgba(0, 0, 0, 0.3) !important; }
+    html.dark #agenter .dark-infobox .bg-purple-50 { box-shadow: 0 1px 6px rgba(0, 0, 0, 0.3) !important; }
+    html.dark #agenter .dark-infobox .bg-emerald-50 { box-shadow: 0 1px 6px rgba(0, 0, 0, 0.3) !important; }
+    html.dark #agenter .dark-infobox .bg-amber-50 { box-shadow: 0 1px 6px rgba(0, 0, 0, 0.3) !important; }
+    /* Chat area inner elements */
+    html.dark #chat-messages .bg-gray-100 { background: #334155 !important; }
+    html.dark .border-t.border-gray-100 { border-color: #334155 !important; }
+    html.dark .bg-gray-50\/50 { background: #1a2538 !important; }
     /* Toggle buttons */
     .toggle-btn { transition: all 0.2s ease; }
     .toggle-btn:hover { background-color: rgba(37, 99, 235, 0.1); }
