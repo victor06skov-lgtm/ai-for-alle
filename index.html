@@ -81,16 +81,13 @@
     html.dark .text-gray-500 { color: #94a3b8 !important; }
     html.dark p { color: #cbd5e1; }
     html.dark em { color: #c4b5fd; }
-    /* FIX: Gradient boxes — must use background shorthand to override background-image */
-    html.dark [class*="bg-gradient-to"] { background: #1e293b !important; }
-    html.dark #hvad-er-ai .bg-gradient-to-r { background: linear-gradient(to right, #1e2d5a, #1e1b4b) !important; border-color: #334155 !important; }
-    html.dark #spoerg .bg-gradient-to-br { background: #0f172a !important; }
-    /* FIX: All white backgrounds — use background shorthand */
-    html.dark .bg-white { background: #1e293b !important; }
-    html.dark .bg-white\/80 { background: rgba(30, 41, 59, 0.8) !important; }
-    html.dark .bg-white\/60 { background: rgba(30, 41, 59, 0.6) !important; }
+    /* FIX: Info boxes and gradient boxes — explicit class for reliable dark mode */
+    html.dark .dark-infobox { background: #1e293b !important; background-image: none !important; border-color: #334155 !important; }
+    html.dark #spoerg .bg-gradient-to-br { background: #0f172a !important; background-image: none !important; }
+    /* FIX: All white backgrounds — use background shorthand + background-image:none */
+    html.dark .bg-white, html.dark [class*="bg-white"] { background: #1e293b !important; background-image: none !important; }
     /* Cards */
-    html.dark .card-hover { background: #1e293b !important; border-color: #334155 !important; }
+    html.dark .card-hover { background: #1e293b !important; background-image: none !important; border-color: #334155 !important; }
     html.dark .card-hover:hover { box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4) !important; }
     /* Borders */
     html.dark .border-gray-100 { border-color: #334155 !important; }
@@ -101,10 +98,10 @@
     html.dark [class*="ring-brand"] { --tw-ring-color: #1d4ed8 !important; }
     html.dark [class*="ring-green"] { --tw-ring-color: #065f46 !important; }
     html.dark [class*="ring-red"] { --tw-ring-color: #991b1b !important; }
-    /* FIX: 50-level colored backgrounds — use background shorthand */
-    html.dark .bg-brand-50 { background: #1e3a8a !important; }
-    html.dark .bg-blue-50 { background: #1e3a5f !important; }
-    html.dark .bg-purple-50 { background: #2d1b69 !important; }
+    /* FIX: 50-level colored backgrounds */
+    html.dark .bg-brand-50 { background: #1e3a8a !important; background-image: none !important; }
+    html.dark .bg-blue-50 { background: #1e3a5f !important; background-image: none !important; }
+    html.dark .bg-purple-50 { background: #2d1b69 !important; background-image: none !important; }
     html.dark .bg-emerald-50 { background: #064e3b !important; }
     html.dark .bg-amber-50 { background: #78350f !important; }
     html.dark .bg-red-50 { background: #7f1d1d !important; }
@@ -324,7 +321,7 @@
       <div class="fade-in">
         <span class="text-brand-600 font-semibold text-sm uppercase tracking-wider">Grundlaget</span>
         <h2 class="text-3xl sm:text-4xl font-800 text-gray-900 mt-2 mb-6">Hvad er AI egentlig?</h2>
-        <div class="bg-gradient-to-r from-brand-50 to-purple-50 rounded-2xl p-6 sm:p-8 mb-8 border border-brand-100">
+        <div class="dark-infobox bg-gradient-to-r from-brand-50 to-purple-50 rounded-2xl p-6 sm:p-8 mb-8 border border-brand-100">
           <p class="text-lg text-gray-700 leading-relaxed mb-4">
             <strong>Kunstig intelligens (AI)</strong> er software der kan lære af eksempler, i stedet for at følge faste regler. Tænk på det sådan:
           </p>
@@ -347,7 +344,7 @@
         </div>
 
         <!-- Interaktiv gætte-demo -->
-        <div class="fade-in bg-white rounded-2xl p-6 sm:p-8 mb-8 border border-gray-200 shadow-sm">
+        <div class="dark-infobox fade-in bg-white rounded-2xl p-6 sm:p-8 mb-8 border border-gray-200 shadow-sm">
           <h3 class="text-xl font-bold text-gray-900 mb-2">Prøv det selv: AI er bare en gætte-maskine</h3>
           <p class="text-gray-500 text-sm mb-6">Hele hemmeligheden bag AI er at gætte det næste ord. Prøv at gøre det samme — klik på det ord du tror kommer næst.</p>
 
@@ -501,7 +498,7 @@
       </div>
 
       <!-- Forklaring -->
-      <div class="fade-in bg-gradient-to-r from-brand-50 to-indigo-50 rounded-2xl p-6 sm:p-8 mb-8 border border-brand-100">
+      <div class="dark-infobox fade-in bg-gradient-to-r from-brand-50 to-indigo-50 rounded-2xl p-6 sm:p-8 mb-8 border border-brand-100">
         <h3 class="text-xl font-bold text-gray-900 mb-4">Hvad er en AI-agent?</h3>
         <p class="text-gray-700 leading-relaxed mb-4">
           En almindelig chatbot venter på din besked og svarer. En <strong>AI-agent</strong> kan selv tage initiativer, bruge værktøjer, og arbejde i flere trin for at løse en opgave. Tænk på forskellen som:
@@ -525,7 +522,7 @@
       </div>
 
       <!-- Workflow forklaring -->
-      <div class="fade-in bg-white rounded-2xl p-6 sm:p-8 mb-8 border border-gray-100">
+      <div class="dark-infobox fade-in bg-white rounded-2xl p-6 sm:p-8 mb-8 border border-gray-100">
         <h3 class="text-xl font-bold text-gray-900 mb-4">Hvad er et AI-workflow?</h3>
         <p class="text-gray-600 leading-relaxed mb-6">
           Et <strong>workflow</strong> er en kæde af trin som AI'en udfører automatisk. I stedet for at du manuelt kopierer output fra ét værktøj til det næste, binder et workflow det hele sammen. Det er som at sætte dominobrikker op — du skubber den første, og resten følger af sig selv.
