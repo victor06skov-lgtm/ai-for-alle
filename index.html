@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lucide-static@latest/font/lucide.min.css" />
   <script>
     tailwind.config = {
+      darkMode: 'class',
       theme: {
         extend: {
           fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
@@ -52,6 +53,83 @@
     summary { cursor: pointer; }
     html { scroll-padding-top: 80px; }
     .nav-active { color: #4263eb; border-bottom: 2px solid #4263eb; }
+
+    /* ===== DARK MODE ===== */
+    html.dark { color-scheme: dark; }
+    html.dark body { background-color: #0f172a; color: #e2e8f0; }
+    html.dark .gradient-text { background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 50%, #f472b6 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    html.dark .skip-link { background: #3b82f6; }
+    /* Nav */
+    html.dark #navbar { background-color: rgba(15, 23, 42, 0.85) !important; border-color: #1e293b !important; }
+    html.dark #mobile-menu { background-color: #0f172a !important; border-color: #1e293b !important; }
+    html.dark .nav-link { color: #94a3b8 !important; }
+    html.dark .nav-link:hover { color: #93c5fd !important; }
+    html.dark #mobile-menu a { color: #94a3b8 !important; }
+    html.dark #mobile-menu a:hover { background-color: #1e293b !important; color: #e2e8f0 !important; }
+    /* Hero */
+    html.dark section.relative > .absolute.inset-0 { background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%) !important; }
+    /* Sections */
+    html.dark .bg-gray-50 { background-color: #1e293b !important; }
+    /* Text */
+    html.dark h1, html.dark h2, html.dark h3, html.dark h4, html.dark strong { color: #f1f5f9; }
+    html.dark .text-gray-900 { color: #f1f5f9 !important; }
+    html.dark .text-gray-800 { color: #e2e8f0 !important; }
+    html.dark .text-gray-700 { color: #cbd5e1 !important; }
+    html.dark .text-gray-600 { color: #94a3b8 !important; }
+    html.dark .text-gray-500 { color: #64748b !important; }
+    html.dark p { color: #cbd5e1; }
+    /* Cards & White BGs */
+    html.dark .bg-white { background-color: #1e293b !important; }
+    html.dark .card-hover { background: #1e293b !important; border-color: #334155 !important; }
+    html.dark .card-hover:hover { box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4) !important; }
+    /* Borders */
+    html.dark .border-gray-100 { border-color: #334155 !important; }
+    html.dark .border-gray-200 { border-color: #475569 !important; }
+    html.dark .border-brand-100 { border-color: #1e40af !important; }
+    html.dark .border-brand-200 { border-color: #1d4ed8 !important; }
+    /* Colored BGs */
+    html.dark .bg-brand-50, html.dark .from-brand-50 { background-color: #1e3a8a !important; }
+    html.dark .bg-blue-50 { background-color: #1e3a5f !important; }
+    html.dark .bg-purple-50, html.dark .to-purple-50 { background-color: #2d1b69 !important; }
+    html.dark .bg-emerald-50 { background-color: #064e3b !important; }
+    html.dark .bg-amber-50 { background-color: #78350f !important; }
+    html.dark .bg-red-50 { background-color: #7f1d1d !important; }
+    html.dark .bg-green-50 { background-color: #064e3b !important; }
+    html.dark .bg-violet-50 { background-color: #2e1065 !important; }
+    html.dark .bg-orange-50 { background-color: #7c2d12 !important; }
+    html.dark .bg-teal-50 { background-color: #134e4a !important; }
+    html.dark .bg-cyan-50 { background-color: #164e63 !important; }
+    html.dark .bg-rose-50 { background-color: #4c0519 !important; }
+    /* Colored text → lighter in dark */
+    html.dark .text-blue-800, html.dark .text-blue-900 { color: #93c5fd !important; }
+    html.dark .text-purple-800, html.dark .text-purple-900 { color: #c4b5fd !important; }
+    html.dark .text-emerald-800, html.dark .text-emerald-900 { color: #6ee7b7 !important; }
+    html.dark .text-amber-800, html.dark .text-amber-900 { color: #fcd34d !important; }
+    html.dark .text-red-800, html.dark .text-red-900 { color: #fca5a5 !important; }
+    html.dark .text-green-800, html.dark .text-green-900 { color: #6ee7b7 !important; }
+    html.dark .text-brand-800, html.dark .text-brand-900 { color: #93c5fd !important; }
+    html.dark .text-brand-600 { color: #60a5fa !important; }
+    html.dark .text-brand-700 { color: #93c5fd !important; }
+    /* Dropdown */
+    html.dark #hero-dropdown-menu { background-color: #1e293b !important; border-color: #334155 !important; }
+    html.dark .hero-drop-link:hover { background-color: #334155 !important; }
+    /* Details / ordliste */
+    html.dark details { background-color: #1e293b !important; border-color: #334155 !important; }
+    html.dark summary { color: #e2e8f0 !important; }
+    /* Chat */
+    html.dark .bg-gray-100 { background-color: #334155 !important; }
+    html.dark #chat-input { background-color: #334155 !important; border-color: #475569 !important; color: #e2e8f0 !important; }
+    html.dark .suggest-btn { background-color: #1e3a8a !important; border-color: #1d4ed8 !important; color: #93c5fd !important; }
+    html.dark .guess-btn { background-color: #334155 !important; border-color: #475569 !important; color: #e2e8f0 !important; }
+    /* Footer */
+    html.dark footer { background-color: #020617 !important; }
+    html.dark footer a { color: #64748b !important; }
+    html.dark footer a:hover { color: #e2e8f0 !important; }
+    /* Toggle buttons */
+    .toggle-btn { transition: all 0.2s ease; }
+    .toggle-btn:hover { background-color: rgba(37, 99, 235, 0.1); }
+    html.dark .toggle-btn:hover { background-color: rgba(96, 165, 250, 0.15); }
+    html.dark .toggle-btn svg { color: #94a3b8; }
   </style>
 </head>
 <body class="bg-white text-gray-800 font-sans antialiased">
@@ -76,9 +154,22 @@
           <a href="#spoerg" class="nav-link px-3 py-2 text-sm font-medium text-gray-600 hover:text-brand-700 rounded-lg transition-colors">Spørg</a>
           <a href="#ordliste" class="nav-link px-3 py-2 text-sm font-medium text-gray-600 hover:text-brand-700 rounded-lg transition-colors">Ordliste</a>
         </div>
-        <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg hover:bg-gray-100 cursor-pointer" aria-label="Åbn menu" aria-expanded="false" aria-controls="mobile-menu">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
-        </button>
+        <div class="flex items-center gap-1.5">
+          <!-- Language toggle -->
+          <button id="lang-toggle" onclick="toggleLanguage()" class="toggle-btn p-2 rounded-lg cursor-pointer flex items-center gap-1" aria-label="Switch language">
+            <svg class="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"/></svg>
+            <span id="lang-label" class="text-xs font-bold text-gray-500">EN</span>
+          </button>
+          <!-- Dark mode toggle -->
+          <button id="dark-mode-btn" onclick="toggleDarkMode()" class="toggle-btn p-2 rounded-lg cursor-pointer" aria-label="Skift mørk/lys tilstand">
+            <svg class="icon-moon w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+            <svg class="icon-sun w-5 h-5 text-yellow-400 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+          </button>
+          <!-- Mobile menu button -->
+          <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg hover:bg-gray-100 cursor-pointer" aria-label="Åbn menu" aria-expanded="false" aria-controls="mobile-menu">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+          </button>
+        </div>
       </div>
     </div>
     <div id="mobile-menu" class="hidden md:hidden border-t border-gray-100 bg-white">
@@ -1644,6 +1735,259 @@
       document.getElementById('chat-input').value = text;
       sendChat();
     }
+
+    // ===== DARK MODE =====
+    function initDarkMode() {
+      const saved = localStorage.getItem('darkMode');
+      if (saved === 'true' || (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+        document.querySelector('.icon-moon').classList.add('hidden');
+        document.querySelector('.icon-sun').classList.remove('hidden');
+      }
+    }
+    function toggleDarkMode() {
+      document.documentElement.classList.toggle('dark');
+      const isDark = document.documentElement.classList.contains('dark');
+      localStorage.setItem('darkMode', isDark);
+      document.querySelector('.icon-moon').classList.toggle('hidden', isDark);
+      document.querySelector('.icon-sun').classList.toggle('hidden', !isDark);
+    }
+    initDarkMode();
+
+    // ===== LANGUAGE TOGGLE =====
+    let currentLang = localStorage.getItem('lang') || 'da';
+
+    // [selector, indexAmongMatches, danishText, englishText, useInnerHTML?]
+    const i18nData = [
+      // === NAV (desktop) ===
+      ['.nav-link', 0, 'Hvad er AI?', 'What is AI?'],
+      ['.nav-link', 1, 'Modeller', 'Models'],
+      ['.nav-link', 2, 'Agenter', 'Agents'],
+      ['.nav-link', 3, 'Platforme', 'Platforms'],
+      ['.nav-link', 4, 'Brug AI', 'Use AI'],
+      ['.nav-link', 5, 'Myter', 'Myths'],
+      ['.nav-link', 6, 'Prøv det', 'Try it'],
+      ['.nav-link', 7, 'Sikkerhed', 'Safety'],
+      ['.nav-link', 8, 'Spørg', 'Ask'],
+      ['.nav-link', 9, 'Ordliste', 'Glossary'],
+      // === NAV (mobile) ===
+      ['#mobile-menu a', 0, 'Hvad er AI?', 'What is AI?'],
+      ['#mobile-menu a', 1, 'Modeller', 'Models'],
+      ['#mobile-menu a', 2, 'Agenter', 'Agents'],
+      ['#mobile-menu a', 3, 'Platforme', 'Platforms'],
+      ['#mobile-menu a', 4, 'Brug AI', 'Use AI'],
+      ['#mobile-menu a', 5, 'Myter vs. Fakta', 'Myths vs. Facts'],
+      ['#mobile-menu a', 6, 'Prøv det selv', 'Try it yourself'],
+      ['#mobile-menu a', 7, 'Sikkerhed', 'Safety'],
+      ['#mobile-menu a', 8, 'Spørg om AI', 'Ask about AI'],
+      ['#mobile-menu a', 9, 'Ordliste', 'Glossary'],
+      // === HERO ===
+      ['h1', 0, 'Forstå <span class="gradient-text">kunstig intelligens</span><br />uden at være nørd', 'Understand <span class="gradient-text">artificial intelligence</span><br />without being a nerd', true],
+      ['section.relative p.text-lg', 0, 'En simpel og ærlig guide til AI. Hvad det er, hvad det kan, og hvorfor alle snakker om det. Skrevet så alle kan forstå det.', 'A simple and honest guide to AI. What it is, what it can do, and why everyone is talking about it. Written so everyone can understand.'],
+      // === HERO DROPDOWN ===
+      ['.hero-drop-link', 0, 'Hvad er AI?', 'What is AI?'],
+      ['.hero-drop-link', 1, 'Typer af AI', 'Types of AI'],
+      ['.hero-drop-link', 2, 'Agenter & Workflows', 'Agents & Workflows'],
+      ['.hero-drop-link', 3, 'Platforme', 'Platforms'],
+      ['.hero-drop-link', 4, 'Brug AI i hverdagen', 'Use AI in daily life'],
+      ['.hero-drop-link', 5, 'Myter vs. Fakta', 'Myths vs. Facts'],
+      ['.hero-drop-link', 6, 'Prøv det selv', 'Try it yourself'],
+      ['.hero-drop-link', 7, 'Sikkerhed & Privatliv', 'Safety & Privacy'],
+      ['.hero-drop-link', 8, 'Spørg om AI', 'Ask about AI'],
+      ['.hero-drop-link', 9, 'Ordliste', 'Glossary'],
+      // === SECTION: HVAD ER AI ===
+      ['#hvad-er-ai span.text-brand-600', 0, 'Grundlaget', 'The Basics'],
+      ['#hvad-er-ai h2', 0, 'Hvad er AI egentlig?', 'What is AI really?'],
+      ['#hvad-er-ai strong', 0, 'Kunstig intelligens (AI)', 'Artificial Intelligence (AI)'],
+      ['#hvad-er-ai h4', 0, 'Traditionel software', 'Traditional software'],
+      ['#hvad-er-ai h4', 1, 'AI-software', 'AI software'],
+      ['#hvad-er-ai h3', 0, 'Prøv det selv: AI er bare en gætte-maskine', 'Try it yourself: AI is just a guessing machine'],
+      // === SECTION: MODELLER ===
+      ['#modeller span.text-brand-600', 0, 'Overblik', 'Overview'],
+      ['#modeller h2', 0, 'De forskellige typer AI', 'The different types of AI'],
+      ['#modeller h3', 0, 'Sprogmodeller (LLM)', 'Language Models (LLM)'],
+      ['#modeller h3', 1, 'Billedgenerering', 'Image Generation'],
+      ['#modeller h3', 2, 'Tale og lyd', 'Speech & Audio'],
+      ['#modeller h3', 3, 'Videogenerering', 'Video Generation'],
+      ['#modeller h3', 4, 'Kode-assistenter', 'Code Assistants'],
+      ['#modeller h3', 5, 'AI-søgning', 'AI Search'],
+      // === SECTION: AGENTER ===
+      ['#agenter span.text-brand-600', 0, 'Det næste skridt', 'The Next Step'],
+      ['#agenter h2', 0, 'AI-agenter og workflows', 'AI Agents and Workflows'],
+      ['#agenter h3', 0, 'Hvad er en AI-agent?', 'What is an AI agent?'],
+      ['#agenter h3', 1, 'Hvad er et AI-workflow?', 'What is an AI workflow?'],
+      ['#agenter h3', 2, 'Computer Use', 'Computer Use'],
+      ['#agenter h3', 3, 'Kode-agenter', 'Code Agents'],
+      ['#agenter h3', 4, 'Automatisering', 'Automation'],
+      ['#agenter h3', 5, 'Multi-agent systemer', 'Multi-agent Systems'],
+      // === SECTION: PLATFORME ===
+      ['#platforme span.text-brand-600', 0, 'Sammenligning', 'Comparison'],
+      ['#platforme h2', 0, 'De store AI-platforme', 'The Major AI Platforms'],
+      // === SECTION: BRUG AI ===
+      ['#brug-ai span.text-brand-600', 0, 'Praktisk', 'Practical'],
+      ['#brug-ai h2', 0, 'Hvad kan du bruge AI til?', 'What can you use AI for?'],
+      ['#brug-ai h3', 0, 'Skrivning', 'Writing'],
+      ['#brug-ai h3', 1, 'Læring', 'Learning'],
+      ['#brug-ai h3', 2, 'Arbejde', 'Work'],
+      ['#brug-ai h3', 3, 'Kreativt', 'Creative'],
+      ['#brug-ai h3', 4, 'Programmering', 'Programming'],
+      ['#brug-ai h3', 5, 'Research', 'Research'],
+      ['#brug-ai h3', 6, '3 gyldne regler for at bruge AI godt', '3 Golden Rules for Using AI Well'],
+      ['#brug-ai h4', 0, 'Vær specifik', 'Be Specific'],
+      ['#brug-ai h4', 1, 'Dobbelttjek fakta', 'Double-check Facts'],
+      ['#brug-ai h4', 2, 'Iterer', 'Iterate'],
+      // === SECTION: MYTER ===
+      ['#myter span.text-brand-600', 0, 'Faktatjek', 'Fact Check'],
+      ['#myter h2', 0, 'Myter vs. Fakta', 'Myths vs. Facts'],
+      // === SECTION: PRØV DET SELV ===
+      ['#proev span.text-brand-600', 0, 'Kom i gang', 'Get Started'],
+      ['#proev h2', 0, 'Prøv det selv (gratis)', 'Try it yourself (free)'],
+      // === SECTION: SIKKERHED ===
+      ['#sikkerhed span.text-brand-600', 0, 'Vær smart', 'Be Smart'],
+      ['#sikkerhed h2', 0, 'Sikkerhed & Privatliv', 'Safety & Privacy'],
+      ['#sikkerhed h3', 0, 'Del ALDRIG med AI', 'NEVER Share with AI'],
+      ['#sikkerhed h3', 1, 'Er fint at dele', 'OK to Share'],
+      // === SECTION: SPØRG ===
+      ['#spoerg span.text-brand-600', 0, 'Interaktiv', 'Interactive'],
+      ['#spoerg h2', 0, 'Spørg om AI', 'Ask About AI'],
+      // === SECTION: ORDLISTE ===
+      ['#ordliste span.text-brand-600', 0, 'Reference', 'Reference'],
+      ['#ordliste h2', 0, 'AI-ordliste', 'AI Glossary'],
+      // === FOOTER ===
+      ['footer p.text-sm', 0, 'Lavet for at gøre kunstig intelligens forståeligt for alle.', 'Made to make artificial intelligence understandable for everyone.'],
+      ['footer a', 0, 'Hvad er AI?', 'What is AI?'],
+      ['footer a', 1, 'Modeller', 'Models'],
+      ['footer a', 2, 'Agenter', 'Agents'],
+      ['footer a', 3, 'Platforme', 'Platforms'],
+      ['footer a', 4, 'Brug AI', 'Use AI'],
+      ['footer a', 5, 'Myter', 'Myths'],
+      ['footer a', 6, 'Prøv det', 'Try it'],
+      ['footer a', 7, 'Sikkerhed', 'Safety'],
+      ['footer a', 8, 'Spørg', 'Ask'],
+      ['footer a', 9, 'Ordliste', 'Glossary'],
+    ];
+
+    // Element refs
+    const i18nRefs = [];
+
+    function initI18n() {
+      i18nData.forEach(([sel, idx, da, en, isHTML]) => {
+        const els = document.querySelectorAll(sel);
+        if (els[idx]) {
+          i18nRefs.push({ el: els[idx], da, en, isHTML: !!isHTML });
+        }
+      });
+      if (currentLang === 'en') applyLanguage('en');
+    }
+
+    function applyLanguage(lang) {
+      currentLang = lang;
+      i18nRefs.forEach(({ el, da, en, isHTML }) => {
+        const val = lang === 'da' ? da : en;
+        if (isHTML) el.innerHTML = val;
+        else el.textContent = val;
+      });
+      document.documentElement.lang = lang;
+      localStorage.setItem('lang', lang);
+      document.getElementById('lang-label').textContent = lang === 'da' ? 'EN' : 'DA';
+
+      // Switch guess game rounds
+      const daRounds = [
+        { sentence: "Hovedstaden i Danmark er", correct: "København", wrong: ["elefant", "langsomt", "bagefter"] },
+        { sentence: "Solen står op i", correct: "øst", wrong: ["stolen", "grøntsager", "blyanten"] },
+        { sentence: "Vand fryser til is ved nul", correct: "grader", wrong: ["bananer", "guitarer", "vinduer"] },
+        { sentence: "Den lille havfrue sidder i", correct: "København", wrong: ["ovnen", "skabet", "suppen"] },
+        { sentence: "Om vinteren falder der ofte hvid", correct: "sne", wrong: ["musik", "sofa", "regnbue"] }
+      ];
+      const enRounds = [
+        { sentence: "The capital of France is", correct: "Paris", wrong: ["elephant", "slowly", "purple"] },
+        { sentence: "The sun rises in the", correct: "east", wrong: ["chair", "vegetables", "pencil"] },
+        { sentence: "Water freezes at zero", correct: "degrees", wrong: ["bananas", "guitars", "windows"] },
+        { sentence: "The Little Mermaid statue is in", correct: "Copenhagen", wrong: ["the oven", "the closet", "the soup"] },
+        { sentence: "In winter it often snows", correct: "white", wrong: ["music", "sofa", "rainbow"] }
+      ];
+      gameRounds.length = 0;
+      (lang === 'da' ? daRounds : enRounds).forEach(r => gameRounds.push(r));
+      currentRound = 0; score = 0; totalGuesses = 0;
+      document.getElementById('guess-score').textContent = '0';
+      document.getElementById('guess-total').textContent = '0';
+      renderRound();
+
+      // Switch chat suggestions
+      const sugDa = ['Hvad er AI?', 'Kan AI tænke?', 'Hvad er ChatGPT?', 'Er AI farligt?', 'Hvad er en LLM?', 'Tager AI mit job?'];
+      const sugEn = ['What is AI?', 'Can AI think?', 'What is ChatGPT?', 'Is AI dangerous?', 'What is an LLM?', 'Will AI take my job?'];
+      const sug = lang === 'da' ? sugDa : sugEn;
+      document.querySelectorAll('.suggest-btn').forEach((btn, i) => {
+        if (sug[i]) btn.textContent = sug[i];
+      });
+
+      // Chat placeholder + welcome
+      document.getElementById('chat-input').placeholder = lang === 'da' ? 'Skriv dit spørgsmål om AI...' : 'Type your question about AI...';
+      const chatMsgs = document.getElementById('chat-messages');
+      chatMsgs.innerHTML = '';
+      const welcome = lang === 'da'
+        ? 'Hej! 👋 Jeg er din AI-guide. Still mig et spørgsmål om kunstig intelligens, og jeg giver dig et klart svar. Du kan også klikke på forslagene herunder.'
+        : 'Hi! 👋 I\'m your AI guide. Ask me a question about artificial intelligence and I\'ll give you a clear answer. You can also click the suggestions below.';
+      addMessage(welcome, false);
+
+      // Title
+      document.title = lang === 'da' ? 'AI for Alle - Din guide til kunstig intelligens' : 'AI for All - Your guide to artificial intelligence';
+    }
+
+    function toggleLanguage() {
+      applyLanguage(currentLang === 'da' ? 'en' : 'da');
+    }
+
+    // English Q&A for chat
+    const qaEnglish = [
+      { keywords: ["what is ai", "artificial intelligence"], answer: "AI (Artificial Intelligence) is software that can learn from examples instead of following fixed rules. Instead of a human writing 'if X, do Y', you show the AI thousands of examples and it finds the patterns itself." },
+      { keywords: ["chatgpt", "chat gpt", "gpt"], answer: "ChatGPT is an AI chatbot made by OpenAI. It uses a language model (GPT) to understand and write text. You can use it to ask questions, get help writing, translating, coding and much more. Free to try at chat.openai.com." },
+      { keywords: ["claude", "anthropic"], answer: "Claude is an AI assistant made by Anthropic. It's known for being good at long texts, nuanced answers and coding. You can try it for free at claude.ai." },
+      { keywords: ["can ai think", "does ai think", "conscious", "feel", "awareness"], answer: "No, AI cannot think or feel anything. It has no consciousness or understanding. What it does is recognize patterns in data and predict the most likely output — like an extremely advanced autocomplete." },
+      { keywords: ["dangerous", "risk", "take over", "terminator", "skynet"], answer: "Today's AI is a tool — it has no intentions or desires. The real risks are about misinformation, bias, privacy, and job impact. But AI won't 'take over the world' — it's software, not a conscious entity." },
+      { keywords: ["job", "work", "replace", "unemploy", "automat"], answer: "AI will change many jobs but rarely replace entire positions. AI takes over specific tasks while humans focus on creativity, empathy and complex problem-solving. Think of it as: 'AI doesn't replace people — people who use AI replace people who don't.'" },
+      { keywords: ["llm", "language model", "large language"], answer: "LLM stands for Large Language Model. These AI models are trained on enormous amounts of text and learn statistical connections between words. Examples are GPT-4, Claude and Gemini — they're the foundation of chatbots like ChatGPT." },
+      { keywords: ["hallucin", "lies", "wrong", "error", "makes up", "facts"], answer: "AI can 'hallucinate' — make up things that sound credible but are wrong. This happens because AI predicts likely word sequences, not facts. Always fact-check important information from AI." },
+      { keywords: ["prompt", "how to ask", "better answers", "prompt engineering"], answer: "A 'prompt' is the text you give to the AI. Tips: 1) Be specific, 2) Give context, 3) Specify format, 4) Give examples. This is called 'prompt engineering' and it's an important skill." },
+      { keywords: ["image", "dall-e", "midjourney", "stable diffusion", "generate image", "ai art"], answer: "AI image generation uses models like DALL-E, Midjourney and Flux to create images from text descriptions. Technically, it starts with random noise and gradually removes it, guided by your description." },
+      { keywords: ["free", "price", "cost", "pay", "subscription"], answer: "Many AI tools have a free version! ChatGPT, Claude, Gemini and Perplexity can all be used for free with some limitations. Paid versions (typically $20/month) give access to smarter models and more features." },
+      { keywords: ["safe", "private", "data", "privacy", "personal", "share"], answer: "Safety tips: 1) Never share passwords or bank info, 2) Assume anything you write could be used for training, 3) Don't use AI for confidential work documents without permission, 4) Always verify AI's answers." },
+      { keywords: ["agent", "workflow", "autonomous"], answer: "AI agents are systems that can perform multiple steps independently — e.g., research a topic, compare prices and write a report. Instead of giving one instruction at a time, you give the agent a goal and it figures out the steps." },
+      { keywords: ["token", "tokens"], answer: "Tokens are the 'pieces' AI splits text into. A token is typically about ¾ of a word. When people say a model has '128K context', it means it can remember ~128,000 tokens (~96,000 words) at once." },
+      { keywords: ["start", "begin", "new", "first time", "beginner", "tips"], answer: "Good place to start: 1) Create a free account at ChatGPT or Claude, 2) Start with simple questions, 3) Experiment with writing, translating or explaining things, 4) Read this guide to understand the different types of AI!" },
+      { keywords: ["future", "5 years", "10 years", "development"], answer: "AI is developing extremely fast. Trends: 1) Models getting smarter and cheaper, 2) AI agents that can perform complex tasks independently, 3) AI integrated into all apps, 4) Better image/video/music generation, 5) More focus on safety and regulation." },
+    ];
+
+    // Override findAnswer to support both languages
+    const originalFindAnswer = findAnswer;
+    findAnswer = function(question) {
+      if (currentLang === 'en') {
+        const q = question.toLowerCase().trim();
+        let best = null, bestScore = 0;
+        for (const qa of qaEnglish) {
+          for (const kw of qa.keywords) {
+            if (q.includes(kw) && kw.length > bestScore) {
+              bestScore = kw.length;
+              best = qa;
+            }
+          }
+        }
+        if (best) return best.answer;
+        // Fuzzy
+        const words = q.split(/\s+/).filter(w => w.length > 2);
+        for (const qa of qaEnglish) {
+          for (const kw of qa.keywords) {
+            for (const kwW of kw.split(/\s+/)) {
+              if (kwW.length > 3 && words.some(w => w.includes(kwW) || kwW.includes(w))) return qa.answer;
+            }
+          }
+        }
+        return "Great question! I don't have an answer for that yet. Try asking about something specific like 'what is ChatGPT?', 'can AI think?', or 'what is an LLM?'. You can also click the suggestions below.";
+      }
+      return originalFindAnswer(question);
+    };
+
+    initI18n();
   </script>
 </body>
 </html>
