@@ -60,26 +60,36 @@
     html.dark .gradient-text { background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 50%, #f472b6 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
     html.dark .skip-link { background: #3b82f6; }
     /* Nav */
-    html.dark #navbar { background-color: rgba(15, 23, 42, 0.85) !important; border-color: #1e293b !important; }
-    html.dark #mobile-menu { background-color: #0f172a !important; border-color: #1e293b !important; }
+    html.dark #navbar { background: rgba(15, 23, 42, 0.9) !important; border-color: #1e293b !important; backdrop-filter: blur(12px); }
+    html.dark #mobile-menu { background: #0f172a !important; border-color: #1e293b !important; }
     html.dark .nav-link { color: #94a3b8 !important; }
     html.dark .nav-link:hover { color: #93c5fd !important; }
     html.dark #mobile-menu a { color: #94a3b8 !important; }
     html.dark #mobile-menu a:hover { background-color: #1e293b !important; color: #e2e8f0 !important; }
     /* Hero */
     html.dark section.relative > .absolute.inset-0 { background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%) !important; }
+    html.dark section.relative .bg-brand-200\/30 { background: rgba(30, 58, 138, 0.3) !important; }
+    html.dark section.relative .bg-purple-200\/20 { background: rgba(88, 28, 135, 0.2) !important; }
     /* Sections */
     html.dark .bg-gray-50 { background-color: #1e293b !important; }
     /* Text */
-    html.dark h1, html.dark h2, html.dark h3, html.dark h4, html.dark strong { color: #f1f5f9; }
+    html.dark h1, html.dark h2, html.dark h3, html.dark h4, html.dark strong { color: #f1f5f9 !important; }
     html.dark .text-gray-900 { color: #f1f5f9 !important; }
     html.dark .text-gray-800 { color: #e2e8f0 !important; }
     html.dark .text-gray-700 { color: #cbd5e1 !important; }
     html.dark .text-gray-600 { color: #94a3b8 !important; }
-    html.dark .text-gray-500 { color: #64748b !important; }
+    html.dark .text-gray-500 { color: #94a3b8 !important; }
     html.dark p { color: #cbd5e1; }
-    /* Cards & White BGs */
-    html.dark .bg-white { background-color: #1e293b !important; }
+    html.dark em { color: #c4b5fd; }
+    /* FIX: Gradient boxes — must use background shorthand to override background-image */
+    html.dark [class*="bg-gradient-to"] { background: #1e293b !important; }
+    html.dark #hvad-er-ai .bg-gradient-to-r { background: linear-gradient(to right, #1e2d5a, #1e1b4b) !important; border-color: #334155 !important; }
+    html.dark #spoerg .bg-gradient-to-br { background: #0f172a !important; }
+    /* FIX: All white backgrounds — use background shorthand */
+    html.dark .bg-white { background: #1e293b !important; }
+    html.dark .bg-white\/80 { background: rgba(30, 41, 59, 0.8) !important; }
+    html.dark .bg-white\/60 { background: rgba(30, 41, 59, 0.6) !important; }
+    /* Cards */
     html.dark .card-hover { background: #1e293b !important; border-color: #334155 !important; }
     html.dark .card-hover:hover { box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4) !important; }
     /* Borders */
@@ -87,44 +97,76 @@
     html.dark .border-gray-200 { border-color: #475569 !important; }
     html.dark .border-brand-100 { border-color: #1e40af !important; }
     html.dark .border-brand-200 { border-color: #1d4ed8 !important; }
-    /* Colored BGs */
-    html.dark .bg-brand-50, html.dark .from-brand-50 { background-color: #1e3a8a !important; }
-    html.dark .bg-blue-50 { background-color: #1e3a5f !important; }
-    html.dark .bg-purple-50, html.dark .to-purple-50 { background-color: #2d1b69 !important; }
-    html.dark .bg-emerald-50 { background-color: #064e3b !important; }
-    html.dark .bg-amber-50 { background-color: #78350f !important; }
-    html.dark .bg-red-50 { background-color: #7f1d1d !important; }
-    html.dark .bg-green-50 { background-color: #064e3b !important; }
-    html.dark .bg-violet-50 { background-color: #2e1065 !important; }
-    html.dark .bg-orange-50 { background-color: #7c2d12 !important; }
-    html.dark .bg-teal-50 { background-color: #134e4a !important; }
-    html.dark .bg-cyan-50 { background-color: #164e63 !important; }
-    html.dark .bg-rose-50 { background-color: #4c0519 !important; }
+    /* FIX: Rings */
+    html.dark [class*="ring-brand"] { --tw-ring-color: #1d4ed8 !important; }
+    html.dark [class*="ring-green"] { --tw-ring-color: #065f46 !important; }
+    html.dark [class*="ring-red"] { --tw-ring-color: #991b1b !important; }
+    /* FIX: 50-level colored backgrounds — use background shorthand */
+    html.dark .bg-brand-50 { background: #1e3a8a !important; }
+    html.dark .bg-blue-50 { background: #1e3a5f !important; }
+    html.dark .bg-purple-50 { background: #2d1b69 !important; }
+    html.dark .bg-emerald-50 { background: #064e3b !important; }
+    html.dark .bg-amber-50 { background: #78350f !important; }
+    html.dark .bg-red-50 { background: #7f1d1d !important; }
+    html.dark .bg-green-50 { background: #064e3b !important; }
+    html.dark .bg-violet-50 { background: #2e1065 !important; }
+    html.dark .bg-orange-50 { background: #7c2d12 !important; }
+    html.dark .bg-teal-50 { background: #134e4a !important; }
+    html.dark .bg-cyan-50 { background: #164e63 !important; }
+    html.dark .bg-rose-50 { background: #4c0519 !important; }
+    /* FIX: 100-level colored backgrounds (icon containers, badges) */
+    html.dark .bg-gray-100 { background: #334155 !important; }
+    html.dark .bg-brand-100 { background: #1e3a8a !important; }
+    html.dark .bg-blue-100 { background: #1e3a5f !important; }
+    html.dark .bg-purple-100 { background: #3b1a7e !important; }
+    html.dark .bg-emerald-100 { background: #065f46 !important; }
+    html.dark .bg-amber-100 { background: #92400e !important; }
+    html.dark .bg-violet-100 { background: #3b1a7e !important; }
+    html.dark .bg-orange-100 { background: #9a3412 !important; }
+    html.dark .bg-teal-100 { background: #134e4a !important; }
+    html.dark .bg-cyan-100 { background: #164e63 !important; }
+    html.dark .bg-red-100 { background: #991b1b !important; }
+    html.dark .bg-rose-100 { background: #9f1239 !important; }
+    html.dark .bg-green-100 { background: #065f46 !important; }
     /* Colored text → lighter in dark */
+    html.dark .text-blue-600 { color: #60a5fa !important; }
     html.dark .text-blue-800, html.dark .text-blue-900 { color: #93c5fd !important; }
+    html.dark .text-purple-600 { color: #a78bfa !important; }
     html.dark .text-purple-800, html.dark .text-purple-900 { color: #c4b5fd !important; }
+    html.dark .text-emerald-600 { color: #34d399 !important; }
     html.dark .text-emerald-800, html.dark .text-emerald-900 { color: #6ee7b7 !important; }
+    html.dark .text-amber-600 { color: #fbbf24 !important; }
     html.dark .text-amber-800, html.dark .text-amber-900 { color: #fcd34d !important; }
+    html.dark .text-red-600 { color: #f87171 !important; }
     html.dark .text-red-800, html.dark .text-red-900 { color: #fca5a5 !important; }
+    html.dark .text-green-600 { color: #34d399 !important; }
     html.dark .text-green-800, html.dark .text-green-900 { color: #6ee7b7 !important; }
-    html.dark .text-brand-800, html.dark .text-brand-900 { color: #93c5fd !important; }
+    html.dark .text-violet-600 { color: #a78bfa !important; }
+    html.dark .text-orange-600 { color: #fb923c !important; }
+    html.dark .text-teal-600 { color: #2dd4bf !important; }
+    html.dark .text-cyan-600 { color: #22d3ee !important; }
+    html.dark .text-rose-600 { color: #fb7185 !important; }
     html.dark .text-brand-600 { color: #60a5fa !important; }
     html.dark .text-brand-700 { color: #93c5fd !important; }
+    html.dark .text-brand-800, html.dark .text-brand-900 { color: #93c5fd !important; }
+    /* FIX: Platform card colored text visible in dark mode */
+    html.dark .text-sm.text-brand-600, html.dark .text-sm.text-purple-600, html.dark .text-sm.text-emerald-600 { opacity: 0.9; }
     /* Dropdown */
-    html.dark #hero-dropdown-menu { background-color: #1e293b !important; border-color: #334155 !important; }
-    html.dark .hero-drop-link:hover { background-color: #334155 !important; }
+    html.dark #hero-dropdown-menu { background: #1e293b !important; border-color: #334155 !important; }
+    html.dark .hero-drop-link { color: #cbd5e1 !important; }
+    html.dark .hero-drop-link:hover { background: #334155 !important; color: #f1f5f9 !important; }
     /* Details / ordliste */
-    html.dark details { background-color: #1e293b !important; border-color: #334155 !important; }
+    html.dark details { background: #1e293b !important; border-color: #334155 !important; }
     html.dark summary { color: #e2e8f0 !important; }
     /* Chat */
-    html.dark .bg-gray-100 { background-color: #334155 !important; }
-    html.dark #chat-input { background-color: #334155 !important; border-color: #475569 !important; color: #e2e8f0 !important; }
-    html.dark .suggest-btn { background-color: #1e3a8a !important; border-color: #1d4ed8 !important; color: #93c5fd !important; }
-    html.dark .guess-btn { background-color: #334155 !important; border-color: #475569 !important; color: #e2e8f0 !important; }
+    html.dark #chat-input { background: #334155 !important; border-color: #475569 !important; color: #e2e8f0 !important; }
+    html.dark .suggest-btn { background: #1e3a8a !important; border-color: #1d4ed8 !important; color: #93c5fd !important; }
+    html.dark .guess-btn { background: #334155 !important; border-color: #475569 !important; color: #e2e8f0 !important; }
     /* Footer */
-    html.dark footer { background-color: #020617 !important; }
+    html.dark footer { background: #020617 !important; }
     html.dark footer a { color: #64748b !important; }
     html.dark footer a:hover { color: #e2e8f0 !important; }
+    html.dark footer .border-gray-800 { border-color: #1e293b !important; }
     /* Toggle buttons */
     .toggle-btn { transition: all 0.2s ease; }
     .toggle-btn:hover { background-color: rgba(37, 99, 235, 0.1); }
