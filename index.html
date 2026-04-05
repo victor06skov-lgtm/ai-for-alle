@@ -70,8 +70,8 @@
     html.dark section.relative > .absolute.inset-0 { background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%) !important; }
     html.dark section.relative .bg-brand-200\/30 { background: rgba(30, 58, 138, 0.3) !important; }
     html.dark section.relative .bg-purple-200\/20 { background: rgba(88, 28, 135, 0.2) !important; }
-    /* Sections */
-    html.dark .bg-gray-50 { background-color: #1e293b !important; }
+    /* Sections — slightly different shade for alternating contrast */
+    html.dark .bg-gray-50 { background-color: #0c1525 !important; }
     /* Text */
     html.dark h1, html.dark h2, html.dark h3, html.dark h4, html.dark strong { color: #f1f5f9 !important; }
     html.dark .text-gray-900 { color: #f1f5f9 !important; }
@@ -86,12 +86,12 @@
     html.dark #spoerg .bg-gradient-to-br { background: #0f172a !important; background-image: none !important; }
     /* FIX: All white backgrounds — use background shorthand + background-image:none */
     html.dark .bg-white, html.dark [class*="bg-white"] { background: #1e293b !important; background-image: none !important; }
-    /* Cards */
-    html.dark .card-hover { background: #1e293b !important; background-image: none !important; border-color: #334155 !important; }
-    html.dark .card-hover:hover { box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4) !important; }
-    /* Borders */
-    html.dark .border-gray-100 { border-color: #334155 !important; }
-    html.dark .border-gray-200 { border-color: #475569 !important; }
+    /* Cards — lighter bg + visible border for contrast */
+    html.dark .card-hover { background: #1e293b !important; background-image: none !important; border-color: #475569 !important; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3) !important; }
+    html.dark .card-hover:hover { box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5) !important; border-color: #60a5fa !important; }
+    /* Borders — brighter for contrast */
+    html.dark .border-gray-100 { border-color: #475569 !important; }
+    html.dark .border-gray-200 { border-color: #4b5e78 !important; }
     html.dark .border-brand-100 { border-color: #1e40af !important; }
     html.dark .border-brand-200 { border-color: #1d4ed8 !important; }
     /* FIX: Rings */
